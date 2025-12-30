@@ -34,7 +34,7 @@ namespace Online_Ordering_System
                     XDocument doc = XDocument.Load(configPath);
                     var connString = doc.Descendants("connectionStrings")
                         .Descendants("add")
-                        .Where(x => x.Attribute("name")?.Value == "OnlineOrderingDB")
+                        .Where(x => x.Attribute("name")?.Value == "OnlineOrderingSystem")
                         .Select(x => x.Attribute("connectionString")?.Value)
                         .FirstOrDefault();
 
@@ -51,7 +51,7 @@ namespace Online_Ordering_System
             }
 
             // 預設使用 SQL Server Express
-            connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=OnlineOrderingDB;Integrated Security=True;Connect Timeout=30";
+            connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=OnlineOrderingSystem;Integrated Security=True";
         }
 
         /// <summary>
@@ -209,7 +209,9 @@ namespace Online_Ordering_System
         public static bool RegisterUser(string username, string password, string email = "")
         {
             try
-            {
+            {   
+
+
                 using (SqlConnection conn = GetConnection())
                 {
                     conn.Open();
@@ -257,6 +259,30 @@ namespace Online_Ordering_System
             catch (Exception ex)
             {
                 MessageBox.Show("載入產品資料失敗：" + ex.Message, "錯誤", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return dt;
+        }
+
+        public static DataTable GetSinglProducts()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection conn = GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT ProductName, Price FROM Products";
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("載入產品資料失敗：" + ex.Message, "錯誤",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return dt;
