@@ -139,7 +139,19 @@ namespace Online_Ordering_System
                         cmd.Parameters.AddWithValue("@Password", password);
                         
                         int count = (int)cmd.ExecuteScalar();
-                        return count > 0;
+                        
+                        if (count > 0)
+                        {
+                            // 驗證成功，設定全域變數
+                            globalVal.Username = username;
+                            
+                            // 立即載入該使用者的訂單計數
+                            LoadUserOrderCount(username);
+                            
+                            return true;
+                        }
+                        
+                        return false;
                     }
                 }
             }
@@ -150,6 +162,37 @@ namespace Online_Ordering_System
                 return false;
             }
         }
+
+        /// <summary>
+        /// 載入使用者訂單計數
+        /// </summary>
+        private static void LoadUserOrderCount(string username)
+        {
+            try
+            {
+                using (SqlConnection conn = GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM Orders o INNER JOIN Users u ON o.UserId = u.UserId WHERE u.Username = @Username";
+                    
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        int count = (int)cmd.ExecuteScalar();
+                        globalVal.UserOrderCount = count;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                globalVal.UserOrderCount = 0;
+                MessageBox.Show("載入訂單計數失敗：" + ex.Message, "錯誤", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        
+
 
         /// <summary>
         /// 檢查使用者名稱是否已存在
@@ -255,7 +298,7 @@ namespace Online_Ordering_System
                         adapter.Fill(dt);
                     }
                 }
-            }
+            } 
             catch (Exception ex)
             {
                 MessageBox.Show("載入產品資料失敗：" + ex.Message, "錯誤", 
@@ -272,7 +315,7 @@ namespace Online_Ordering_System
                 using (SqlConnection conn = GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT ProductName, Price FROM Products";
+                    string query = "SELECT ProductName, Price ,Picture FROM Products";
 
                     using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                     {

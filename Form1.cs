@@ -93,7 +93,7 @@ namespace Online_Ordering_System
             if (ValidateLogin(username, password))
             {
                 MessageBox.Show("登入成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Form2 form2 = new Form2();
+                點餐頁面 form2 = new 點餐頁面();
                 form2.Show();
                 this.Hide();
             }

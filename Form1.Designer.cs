@@ -51,7 +51,7 @@
             this.login.Font = new System.Drawing.Font("Consolas", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login.HighEmphasis = true;
             this.login.Icon = null;
-            this.login.Location = new System.Drawing.Point(618, 441);
+            this.login.Location = new System.Drawing.Point(618, 431);
             this.login.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.login.MouseState = MaterialSkin.MouseState.HOVER;
             this.login.Name = "login";
@@ -101,7 +101,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(688, 339);
+            this.materialLabel1.Location = new System.Drawing.Point(690, 326);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(1, 0);
@@ -115,17 +115,18 @@
             this.input_pwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.input_pwd.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.input_pwd.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.input_pwd.Location = new System.Drawing.Point(737, 374);
+            this.input_pwd.Location = new System.Drawing.Point(739, 361);
             this.input_pwd.Name = "input_pwd";
             this.input_pwd.PasswordChar = '*';
             this.input_pwd.Size = new System.Drawing.Size(289, 33);
             this.input_pwd.TabIndex = 6;
+            this.input_pwd.Text = "admin123";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(613, 311);
+            this.label1.Location = new System.Drawing.Point(615, 298);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 28);
             this.label1.TabIndex = 8;
@@ -135,7 +136,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(613, 374);
+            this.label2.Location = new System.Drawing.Point(615, 361);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 28);
             this.label2.TabIndex = 9;
@@ -146,10 +147,11 @@
             this.input_username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.input_username.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.input_username.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.input_username.Location = new System.Drawing.Point(737, 307);
+            this.input_username.Location = new System.Drawing.Point(739, 294);
             this.input_username.Name = "input_username";
             this.input_username.Size = new System.Drawing.Size(287, 32);
             this.input_username.TabIndex = 7;
+            this.input_username.Text = "admin";
             this.input_username.TextChanged += new System.EventHandler(this.input_username_TextChanged);
             // 
             // googleLogin
@@ -162,7 +164,7 @@
             this.googleLogin.Font = new System.Drawing.Font("Consolas", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.googleLogin.HighEmphasis = true;
             this.googleLogin.Icon = null;
-            this.googleLogin.Location = new System.Drawing.Point(618, 501);
+            this.googleLogin.Location = new System.Drawing.Point(618, 491);
             this.googleLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.googleLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.googleLogin.Name = "googleLogin";
@@ -181,7 +183,7 @@
             this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerBtn.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerBtn.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.registerBtn.Location = new System.Drawing.Point(660, 552);
+            this.registerBtn.Location = new System.Drawing.Point(666, 552);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(345, 23);
             this.registerBtn.TabIndex = 11;
