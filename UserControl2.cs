@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Online_Ordering_System
 {
-    public partial class UserControl1 : UserControl
+    public partial class UserControl2 : UserControl
     {
-        public UserControl1()
+        public UserControl2()
         {
             InitializeComponent();
-        }
-
-        private void UserControl1_Load(object sender, EventArgs e)
-        {
-         
         }
     }
 }

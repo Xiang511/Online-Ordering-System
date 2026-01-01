@@ -1,6 +1,6 @@
 ﻿namespace Online_Ordering_System
 {
-    partial class UserControl1
+    partial class UserControl2
     {
         /// <summary> 
         /// 設計工具所需的變數。
@@ -28,19 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // UserControl1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(1078, 684);
-            this.Load += new System.EventHandler(this.UserControl1_Load);
-            this.ResumeLayout(false);
-
         }
 
         #endregion
