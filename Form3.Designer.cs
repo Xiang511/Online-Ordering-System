@@ -151,6 +151,7 @@
             this.toolStripLblLogout.Size = new System.Drawing.Size(171, 70);
             this.toolStripLblLogout.Text = "Logout";
             this.toolStripLblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripLblLogout.Click += new System.EventHandler(this.toolStripLblLogout_Click);
             // 
             // panel1
             // 

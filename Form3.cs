@@ -31,13 +31,15 @@ namespace Online_Ordering_System
             toolStripLblTitle.Paint += toolStripLblHome_Paint; // 註冊 Paint 事件
 
             pictureBox1.Image = new Bitmap(pictureBox1.Image, new Size(38, 38));
-            
+
+
+            // 載入使用者訂單資料到 DataGridView
+            LoadUserOrders();
             // 顯示使用者名稱和訂單計數
             LblUsername.Text = globalVal.Username;
             LblOrderCount.Text = globalVal.UserOrderCount.ToString();
 
-            // 載入使用者訂單資料到 DataGridView
-            LoadUserOrders();
+           
         }
 
         /// <summary>
@@ -168,6 +170,17 @@ namespace Online_Ordering_System
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void toolStripLblLogout_Click(object sender, EventArgs e)
+        {
+            globalVal.Username = string.Empty;
+            globalVal.UserOrderCount = 0;
+            this.Close();
+            Form1 loginForm = new Form1();
+            loginForm.Show();
+            MessageBox.Show("已登出！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
     }
