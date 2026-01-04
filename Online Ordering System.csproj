@@ -131,12 +131,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QUICK_SETUP.md" />
-    <None Include="README_ADONET.md" />
-    <None Include="SQLSERVER_CONNECTION_GUIDE.md" />
-    <None Include="Pending Fix.md" />
-    <None Include="SQL_CONNECTION_SUMMARY.md" />
-    <None Include="TROUBLESHOOTING.md" />
+    <None Include="docs\QUICK_SETUP.md" />
+    <None Include="docs\README_ADONET.md" />
+    <None Include="docs\SQLSERVER_CONNECTION_GUIDE.md" />
+    <None Include="docs\Pending Fix.md" />
+    <None Include="docs\SQL_CONNECTION_SUMMARY.md" />
+    <None Include="docs\TROUBLESHOOTING.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -145,7 +145,7 @@
     <None Include="Resources\undraw_login_weas.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DatabaseScript.sql" />
+    <Content Include="docs\DatabaseScript.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
