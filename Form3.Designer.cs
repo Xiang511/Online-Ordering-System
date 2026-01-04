@@ -37,7 +37,6 @@
             this.toolStripLblLogout = new System.Windows.Forms.ToolStripLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -139,14 +138,12 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(201, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1079, 651);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label7
             // 
@@ -158,18 +155,6 @@
             this.label7.Size = new System.Drawing.Size(383, 20);
             this.label7.TabIndex = 7;
             this.label7.Text = "Connecting the right books with the right people.";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(-7, -21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(383, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Connecting the right books with the right people.";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form3
             // 
@@ -201,7 +186,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLblMarket;
         private System.Windows.Forms.ToolStripLabel toolStripLblOrder;
         private System.Windows.Forms.ToolStripLabel toolStripLblLogout;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
     }
 }
