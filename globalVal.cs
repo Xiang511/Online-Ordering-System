@@ -12,5 +12,7 @@ namespace Online_Ordering_System
         public static int UserOrderCount;
 
         public static String Username ="";
+
+        public static bool islogin = false;
     }
 }

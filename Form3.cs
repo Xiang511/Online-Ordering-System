@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Online_Ordering_System
 {
     public partial class Form3 : Form
@@ -30,17 +31,18 @@ namespace Online_Ordering_System
 
             toolStripLblTitle.Paint += toolStripLblHome_Paint; // 註冊 Paint 事件
 
-            
-            Width = 1500;
-            Height = 800;
-
-        }
-
+            if (globalVal.islogin)
+            {
+                toolStripLBlUserName.Text = "歡迎 " + globalVal.Username + "！";
+                toolStripLBlUserName.IsLink = false;
+                toolStripLblLogout.Visible = true;
+            }
        
+        }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            LoadUserControl<UserControl1>();
+           
         }
 
         private void toolStripLblHome_Paint(object sender, PaintEventArgs e)
@@ -78,11 +80,47 @@ namespace Online_Ordering_System
         {
             globalVal.Username = string.Empty;
             globalVal.UserOrderCount = 0;
+            globalVal.islogin = false;
             this.Close();
             Form1 loginForm = new Form1();
             loginForm.Show();
             MessageBox.Show("已登出！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+        private void toolStripLblOrder_Click(object sender, EventArgs e)
+        {
+            LoadUserControl<UserControl1>();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripLBlUserName_Click(object sender, EventArgs e)
+        {
+            Form Form1 = new Form1();
+            Form1.Show();
+            
+            Form3 form3 = this;
+            form3.Hide();
+        }
+
+        private void toolStrip2_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripLBlUserName_OwnerChanged(object sender, EventArgs e)
+        {
+           
+        }
+       
     }
 }

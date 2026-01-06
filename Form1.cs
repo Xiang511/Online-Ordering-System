@@ -94,8 +94,10 @@ namespace Online_Ordering_System
             {
                 MessageBox.Show("登入成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form3 mainForm = new Form3();
+                globalVal.islogin = true;
+                globalVal.Username = username;
                 mainForm.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {

@@ -141,7 +141,7 @@
         R+sGhx+S0he3v2+usBq+WwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="toolStripLblMarket.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="toolStripLabel1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAASVJREFUSEvt
         liFyAkEURFcicwQkEomMjOQIcbHcIDJHQCJznEhkJDJHWPrPfzu1MDuQmhkEBa/qi+3u7b+1O2K7u6Hv
@@ -150,6 +150,17 @@
         m8XZAuwAUgCpePHS1cgcy7yFS5ElVgCtbLEhaevORXbEI+jliw3J7+5OsiZ2Al7d4gHZc40dJpv42qeQ
         H+AyD7nrwX9C3XNxCrnn4mKou4PFraE+jzJ7jzYl+TOdRMHzf66aWVH70HTdEUb0PqGp2krNAAAAAElF
         TkSuQmCC
+</value>
+  </data>
+  <data name="toolStripLblShopCar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAATpJREFUSEvt
+        1T1uwkAQhmGXlCkpKVNScoTcIG26HCPH4AiUKXOElJSUHIGS0vlm513LWsnYs8ZIUfJILrw734x/EG7+
+        prZtP4pjw9ayNKh0ZWtZDCut2X4Mht7b+BNU0d5r74v2t1GblT+8yJFdaH2bCg9en6xYDlHu7PGJd5uR
+        Md8sTabMyqNJLK/A0XPBKxZFrp6MZxOy5pOlUap99kiyZzlGwZPnp1855QlLccr239WB5UGqeffS5JXl
+        OjQJI15H+Y23CXuiRR2aJCwtT7NefGQy731FaNjFZz7wbo3mffnYeWgXQ3YWWv0iuug3HVtOR6l2p8P+
+        SKq+atag/69lzmwNshov7cSHK9R9nTK2BlHWd2RrOoW6D0TG1iDK+qoG1zzq8mLr3rNR2H4oO05HqXZr
+        GU7/oWl+AExUrg1s9JRKAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="toolStripLblOrder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -172,7 +183,10 @@
         THIAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="toolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>237, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>47</value>
+    <value>63</value>
   </metadata>
 </root>
