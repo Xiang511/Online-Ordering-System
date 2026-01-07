@@ -77,6 +77,7 @@ namespace Online_Ordering_System
         }
 
 
+
         private void toolStripLblLogout_Click(object sender, EventArgs e)
         {
             globalVal.Username = string.Empty;
@@ -89,10 +90,7 @@ namespace Online_Ordering_System
 
         }
 
-        private void toolStripLblOrder_Click(object sender, EventArgs e)
-        {
-            LoadUserControl<OrderPanel>();
-        }
+        
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -124,16 +122,46 @@ namespace Online_Ordering_System
         }
 
 
-     
+        private void toolStripLblOrder_Click(object sender, EventArgs e)
+        {
+            if (globalVal.islogin)
+            {
+                LoadUserControl<OrderPanel>();
+            }
+            else
+            {
+                MessageBox.Show("請先登入會員！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LoadUserControl<HomePanel>();
+            }
+            
+        }
 
         private void toolStripLabel1_Click_1(object sender, EventArgs e)
         {
-            LoadUserControl<MarketPanel>();
+
+            if (globalVal.islogin)
+            {
+                LoadUserControl<MarketPanel>();
+            }
+            else
+            {
+                MessageBox.Show("請先登入會員！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LoadUserControl<HomePanel>();
+            }
         }
 
         private void toolStripLblShopCar_Click(object sender, EventArgs e)
         {
-            LoadUserControl<CartPanel>();
+
+            if (globalVal.islogin)
+            {
+                LoadUserControl<CartPanel>();
+            }
+            else
+            {
+                MessageBox.Show("請先登入會員！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LoadUserControl<HomePanel>();
+            }
         }
     }
 }
