@@ -38,7 +38,7 @@ namespace Online_Ordering_System
                 toolStripLBlUserName.IsLink = false;
                 toolStripLblLogout.Visible = true;
             }
-            
+
             LoadUserControl<HomePanel>();
         }
 
@@ -86,13 +86,14 @@ namespace Online_Ordering_System
             globalVal.islogin = false;
             toolStripLBlUserName.Text = "未登錄";
             MessageBox.Show("已登出！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadUserControl<HomePanel>();
             Form1 loginForm = new Form1();
             loginForm.ShowDialog();
-            
+
 
         }
 
-        
+
 
         private void toolStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -128,23 +129,18 @@ namespace Online_Ordering_System
             else
             {
                 MessageBox.Show("請先登入會員！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LoadUserControl<HomePanel>();
+                Form1 loginForm = new Form1();
+                loginForm.ShowDialog();
             }
-            
+
         }
 
         private void toolStripLabel1_Click_1(object sender, EventArgs e)
         {
 
-            if (globalVal.islogin)
-            {
-                LoadUserControl<MarketPanel>();
-            }
-            else
-            {
-                MessageBox.Show("請先登入會員！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LoadUserControl<HomePanel>();
-            }
+
+            LoadUserControl<MarketPanel>();
+
         }
 
         private void toolStripLblShopCar_Click(object sender, EventArgs e)
@@ -157,13 +153,15 @@ namespace Online_Ordering_System
             else
             {
                 MessageBox.Show("請先登入會員！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LoadUserControl<HomePanel>();
+                Form1 loginForm = new Form1();
+                loginForm.ShowDialog();
             }
         }
 
         private void Form3_Activated(object sender, EventArgs e)
         {
-            if (globalVal.islogin) {
+            if (globalVal.islogin)
+            {
                 toolStripLBlUserName.Text = globalVal.Username;
                 toolStripLBlUserName.IsLink = false;
                 toolStripLblLogout.Visible = true;
