@@ -19,7 +19,7 @@ namespace Online_Ordering_System
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (globalVal.bannerIndex < 5)
+            if (globalVal.bannerIndex < 3)
             {
                 globalVal.bannerIndex++;
                 BannerSlider.ImageLocation = $"Image/Banner{globalVal.bannerIndex}.png";
@@ -33,7 +33,7 @@ namespace Online_Ordering_System
             }
         }
 
-        private void HomePanel_Load(object sender, EventArgs e)
+        private void BannerSlider_Click(object sender, EventArgs e)
         {
 
         }
