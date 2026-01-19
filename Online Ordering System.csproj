@@ -169,9 +169,6 @@
     <None Include="docs\TROUBLESHOOTING.md" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\undraw_login_weas.png" />
   </ItemGroup>
   <ItemGroup>

@@ -131,7 +131,7 @@ namespace Online_Ordering_System
                 using (SqlConnection conn = GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password";
+                    string query = "SELECT COUNT(*) FROM [User] WHERE username = @Username AND password = @Password";
                     
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
