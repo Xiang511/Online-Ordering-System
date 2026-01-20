@@ -259,7 +259,7 @@ namespace Online_Ordering_System
             // 1. 檢查帳號是否重複
             if (DatabaseHelper.UserExists(username))
             {
-                MessageBox.Show("此帳號已被使用！");
+                MessageBox.Show("此帳號名稱已被使用！");
                 return;
             }
 

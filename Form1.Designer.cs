@@ -120,7 +120,7 @@
             this.input_pwd.PasswordChar = '*';
             this.input_pwd.Size = new System.Drawing.Size(289, 33);
             this.input_pwd.TabIndex = 6;
-            this.input_pwd.Text = "admin123";
+            this.input_pwd.Text = "123456";
             // 
             // label1
             // 
@@ -151,7 +151,7 @@
             this.input_username.Name = "input_username";
             this.input_username.Size = new System.Drawing.Size(287, 32);
             this.input_username.TabIndex = 7;
-            this.input_username.Text = "admin";
+            this.input_username.Text = "user";
             this.input_username.TextChanged += new System.EventHandler(this.input_username_TextChanged);
             // 
             // googleLogin

@@ -34,7 +34,7 @@ namespace Online_Ordering_System
 
             if (globalVal.islogin)
             {
-                toolStripLBlUserName.Text = "歡迎 " + globalVal.Username + "！";
+                toolStripLBlUserName.Text = "歡迎 " + UserProfile.Username + "！";
                 toolStripLBlUserName.IsLink = false;
                 toolStripLblLogout.Visible = true;
             }
@@ -81,8 +81,7 @@ namespace Online_Ordering_System
 
         private void toolStripLblLogout_Click(object sender, EventArgs e)
         {
-            globalVal.Username = string.Empty;
-            globalVal.UserOrderCount = 0;
+            DatabaseHelper.clearUserProfile();
             globalVal.islogin = false;
             toolStripLBlUserName.Text = "未登錄";
             MessageBox.Show("已登出！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -162,7 +161,7 @@ namespace Online_Ordering_System
         {
             if (globalVal.islogin)
             {
-                toolStripLBlUserName.Text = globalVal.Username;
+                toolStripLBlUserName.Text = UserProfile.Username;
                 toolStripLBlUserName.IsLink = false;
                 toolStripLblLogout.Visible = true;
                 toolStripLBlUserName.Enabled = false;

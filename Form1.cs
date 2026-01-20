@@ -19,25 +19,7 @@ namespace Online_Ordering_System
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // 測試資料庫連線
-            if (!DatabaseHelper.DatabaseExists())
-            {
-                DialogResult result = MessageBox.Show(
-                    "無法連線到資料庫！\n\n是否要測試資料庫連線？", 
-                    "資料庫連線警告", 
-                    MessageBoxButtons.YesNo, 
-                    MessageBoxIcon.Warning);
-                
-                if (result == DialogResult.Yes)
-                {
-                    DatabaseHelper.TestConnection();
-                }
-            }
-            else
-            {
-                // 初始化資料庫表格
-                DatabaseHelper.InitializeDatabase();
-            }
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -95,7 +77,7 @@ namespace Online_Ordering_System
                 MessageBox.Show("登入成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form3 mainForm = new Form3();
                 globalVal.islogin = true;
-                globalVal.Username = username;
+                UserProfile.Username = username;
                 //mainForm.Show();
                 this.Close();
             }
@@ -112,10 +94,6 @@ namespace Online_Ordering_System
             return DatabaseHelper.ValidateUser(username, password);
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-            DatabaseHelper.TestConnection();
-        }
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
