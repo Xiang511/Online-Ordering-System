@@ -202,6 +202,7 @@ namespace Online_Ordering_System
                                 UserProfile.CreatedDate = (DateTime)reader["createdate"];
                                 UserProfile.Role = (int)reader["role"];
                                 UserProfile.Phone = reader["phone"] == DBNull.Value ? "" : (string)reader["phone"];
+                                UserProfile.Photo = reader["photo"] == DBNull.Value ? "" : (string)reader["photo"];
                             }
                         }
                     }

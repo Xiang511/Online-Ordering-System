@@ -56,8 +56,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.LblEmail = new System.Windows.Forms.Label();
             this.LblUsername = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnChangePhoto = new System.Windows.Forms.Button();
+            this.txtPic = new System.Windows.Forms.TextBox();
             this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +86,9 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.txtPic);
+            this.materialCard1.Controls.Add(this.btnChangePhoto);
+            this.materialCard1.Controls.Add(this.pictureBox1);
             this.materialCard1.Controls.Add(this.button3);
             this.materialCard1.Controls.Add(this.label19);
             this.materialCard1.Controls.Add(this.txtConfirmpassword);
@@ -107,7 +113,6 @@
             this.materialCard1.Controls.Add(this.label6);
             this.materialCard1.Controls.Add(this.LblEmail);
             this.materialCard1.Controls.Add(this.LblUsername);
-            this.materialCard1.Controls.Add(this.label3);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(23, 120);
@@ -400,7 +405,7 @@
             // 
             this.LblEmail.AutoSize = true;
             this.LblEmail.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LblEmail.Location = new System.Drawing.Point(116, 101);
+            this.LblEmail.Location = new System.Drawing.Point(161, 84);
             this.LblEmail.Name = "LblEmail";
             this.LblEmail.Size = new System.Drawing.Size(173, 27);
             this.LblEmail.TabIndex = 2;
@@ -410,23 +415,40 @@
             // 
             this.LblUsername.AutoSize = true;
             this.LblUsername.Font = new System.Drawing.Font("微軟正黑體", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LblUsername.Location = new System.Drawing.Point(114, 55);
+            this.LblUsername.Location = new System.Drawing.Point(159, 38);
             this.LblUsername.Name = "LblUsername";
             this.LblUsername.Size = new System.Drawing.Size(133, 37);
             this.LblUsername.TabIndex = 1;
             this.LblUsername.Text = "測試人員";
             // 
-            // label3
+            // pictureBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DarkCyan;
-            this.label3.Font = new System.Drawing.Font("新細明體", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.Location = new System.Drawing.Point(30, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 96);
-            this.label3.TabIndex = 0;
-            this.label3.Text = " ";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(33, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(113, 119);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnChangePhoto
+            // 
+            this.btnChangePhoto.Location = new System.Drawing.Point(121, 113);
+            this.btnChangePhoto.Name = "btnChangePhoto";
+            this.btnChangePhoto.Size = new System.Drawing.Size(25, 23);
+            this.btnChangePhoto.TabIndex = 29;
+            this.btnChangePhoto.Text = "✏";
+            this.btnChangePhoto.UseVisualStyleBackColor = true;
+            this.btnChangePhoto.Visible = false;
+            this.btnChangePhoto.Click += new System.EventHandler(this.btnChangePhoto_Click);
+            // 
+            // txtPic
+            // 
+            this.txtPic.Location = new System.Drawing.Point(166, 115);
+            this.txtPic.Name = "txtPic";
+            this.txtPic.Size = new System.Drawing.Size(168, 22);
+            this.txtPic.TabIndex = 30;
+            this.txtPic.Visible = false;
             // 
             // Profile
             // 
@@ -440,6 +462,7 @@
             this.Load += new System.EventHandler(this.Profile_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,7 +473,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label LblUsername;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -475,5 +497,8 @@
         private System.Windows.Forms.Label label8;
         private MaterialSkin.Controls.MaterialTextBox txtNewpassword;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnChangePhoto;
+        private System.Windows.Forms.TextBox txtPic;
     }
 }
