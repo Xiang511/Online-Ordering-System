@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLBlUserName = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLblTitle = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLblHome = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -42,9 +37,15 @@
             this.toolStripLblOrder = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLblProfile = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLblLogout = new System.Windows.Forms.ToolStripLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLBlUserName = new System.Windows.Forms.ToolStripLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -68,64 +69,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(254, 729);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(254, 37);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1043, 698);
-            this.panel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1022, 699);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 14);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(80)))), ((int)(((byte)(99)))));
-            this.toolStrip2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLBlUserName,
-            this.toolStripLabel2});
-            this.toolStrip2.Location = new System.Drawing.Point(254, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1031, 37);
-            this.toolStrip2.TabIndex = 3;
-            this.toolStrip2.Text = "toolStrip2";
-            this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked_1);
-            // 
-            // toolStripLBlUserName
-            // 
-            this.toolStripLBlUserName.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLBlUserName.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.toolStripLBlUserName.IsLink = true;
-            this.toolStripLBlUserName.LinkColor = System.Drawing.Color.White;
-            this.toolStripLBlUserName.Name = "toolStripLBlUserName";
-            this.toolStripLBlUserName.Padding = new System.Windows.Forms.Padding(2);
-            this.toolStripLBlUserName.Size = new System.Drawing.Size(79, 34);
-            this.toolStripLBlUserName.Text = "未登錄";
-            this.toolStripLBlUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripLBlUserName.VisitedLinkColor = System.Drawing.Color.White;
-            this.toolStripLBlUserName.Click += new System.EventHandler(this.toolStripLBlUserName_Click);
-            this.toolStripLBlUserName.OwnerChanged += new System.EventHandler(this.toolStripLBlUserName_OwnerChanged);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
-            this.toolStripLabel2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Padding = new System.Windows.Forms.Padding(2);
-            this.toolStripLabel2.Size = new System.Drawing.Size(34, 34);
             // 
             // toolStripLblTitle
             // 
@@ -237,12 +180,72 @@
             this.toolStripLblLogout.Visible = false;
             this.toolStripLblLogout.Click += new System.EventHandler(this.toolStripLblLogout_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(254, 36);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1043, 699);
+            this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1022, 699);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 14);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(80)))), ((int)(((byte)(99)))));
+            this.toolStrip2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLBlUserName});
+            this.toolStrip2.Location = new System.Drawing.Point(254, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.toolStrip2.Size = new System.Drawing.Size(1031, 35);
+            this.toolStrip2.TabIndex = 3;
+            this.toolStrip2.Text = "toolStrip2";
+            this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked_1);
+            // 
+            // toolStripLBlUserName
+            // 
+            this.toolStripLBlUserName.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLBlUserName.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.toolStripLBlUserName.ForeColor = System.Drawing.Color.White;
+            this.toolStripLBlUserName.LinkColor = System.Drawing.Color.White;
+            this.toolStripLBlUserName.Name = "toolStripLBlUserName";
+            this.toolStripLBlUserName.Padding = new System.Windows.Forms.Padding(2);
+            this.toolStripLBlUserName.Size = new System.Drawing.Size(74, 30);
+            this.toolStripLBlUserName.Text = "Login";
+            this.toolStripLBlUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripLBlUserName.VisitedLinkColor = System.Drawing.Color.White;
+            this.toolStripLBlUserName.Click += new System.EventHandler(this.toolStripLBlUserName_Click);
+            this.toolStripLBlUserName.OwnerChanged += new System.EventHandler(this.toolStripLBlUserName_OwnerChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(80)))), ((int)(((byte)(99)))));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1178, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1285, 729);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
@@ -261,6 +264,7 @@
             this.panel1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,8 +282,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripLabel toolStripLBlUserName;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLblCart;
         private System.Windows.Forms.ToolStripLabel toolStripLblProfile;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -32,13 +32,6 @@ namespace Online_Ordering_System
 
             toolStripLblTitle.Paint += toolStripLblHome_Paint; // 註冊 Paint 事件
 
-            if (globalVal.islogin)
-            {
-                toolStripLBlUserName.Text = "歡迎 " + UserProfile.Username + "！";
-                toolStripLBlUserName.IsLink = false;
-                toolStripLblLogout.Visible = true;
-            }
-
             LoadUserControl<HomePanel>();
         }
 
@@ -83,7 +76,8 @@ namespace Online_Ordering_System
         {
             DatabaseHelper.clearUserProfile();
             globalVal.islogin = false;
-            toolStripLBlUserName.Text = "未登錄";
+            toolStripLBlUserName.Text = "Login";
+            pictureBox1.Image = null;
             MessageBox.Show("已登出！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadUserControl<HomePanel>();
             Form1 loginForm = new Form1();
@@ -162,16 +156,19 @@ namespace Online_Ordering_System
             if (globalVal.islogin)
             {
                 toolStripLBlUserName.Text = UserProfile.Username;
-                toolStripLBlUserName.IsLink = false;
                 toolStripLblLogout.Visible = true;
                 toolStripLBlUserName.Enabled = false;
+                DatabaseHelper.GetUserProfile();
+                pictureBox1.ImageLocation = UserProfile.Photo;
+                Console.WriteLine(pictureBox1.ImageLocation);
+
             }
             else
             {
-                toolStripLBlUserName.Text = "未登錄";
-                toolStripLBlUserName.IsLink = true;
+                toolStripLBlUserName.Text = "Login";
                 toolStripLBlUserName.Enabled = true;
                 toolStripLblLogout.Visible = false;
+                pictureBox1.Image = null;
             }
 
         }

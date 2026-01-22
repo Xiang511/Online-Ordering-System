@@ -189,6 +189,7 @@ namespace Online_Ordering_System
             txtPhone.Text = UserProfile.Phone;
             txtEmail.Text = UserProfile.Email;
             LblCreatdate.Text = UserProfile.CreatedDate.ToString("MMMM dd, yyyy");
+            txtPic.Text = UserProfile.Photo;
 
             txtConfirmpassword.Clear();
             txtNewpassword.Clear();
@@ -198,6 +199,7 @@ namespace Online_Ordering_System
             button1.Visible = false;
             button2.Visible = false;
             btnChangePhoto.Visible = false;
+            txtPic.Visible = false;
 
 
             txtEmail.Enabled = false;
