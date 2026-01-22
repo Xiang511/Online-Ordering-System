@@ -38,6 +38,7 @@ namespace Online_Ordering_System
             else
             {
                 txtPhone.Text = phone;
+                txtPhone.MaxLength = 10;
             }
 
             string photo = UserProfile.Photo;
@@ -100,29 +101,48 @@ namespace Online_Ordering_System
             txtNewpassword.Enabled = false;
             txtConfirmpassword.Enabled = false;
 
+            int phone;
 
             if ((txtEmail.Text != UserProfile.Email) | (txtPhone.Text != UserProfile.Phone))
-            {
-                try
+            {   
+                if (string.IsNullOrEmpty(txtEmail.Text))
                 {
-                    SqlConnection con = DatabaseHelper.GetConnection();
-                    con.Open();
-                    string updateQuery = "UPDATE [User] SET Email = @Email, Phone = @Phone WHERE UserId = @UserId";
-                    SqlCommand cmd = new SqlCommand(updateQuery, con);
-                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
-                    cmd.Parameters.AddWithValue("@UserId", UserProfile.UserId);
-                    int rows = cmd.ExecuteNonQuery();
-                    con.Close();
-                    Console.WriteLine($"共{rows}筆資料更新");
-                    MessageBox.Show("基本資料已更新", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    UserProfile.Email = txtEmail.Text;
-                    UserProfile.Phone = txtPhone.Text;
-                }
-                catch (Exception ex)
+                    MessageBox.Show("電子郵件不可為空白", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }else if (txtPhone.Text.Length != 10)
                 {
-                    MessageBox.Show(ex.Message, "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("電話號碼必須是10位數字", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
+                else if (!int.TryParse(txtPhone.Text, out phone))
+                {
+                    MessageBox.Show("電話號碼格式錯誤，請輸入數字", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    try
+                    {
+                        SqlConnection con = DatabaseHelper.GetConnection();
+                        con.Open();
+                        string updateQuery = "UPDATE [User] SET Email = @Email, Phone = @Phone WHERE UserId = @UserId";
+                        SqlCommand cmd = new SqlCommand(updateQuery, con);
+                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Phone", txtPhone.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserId", UserProfile.UserId);
+                        int rows = cmd.ExecuteNonQuery();
+                        con.Close();
+                        Console.WriteLine($"共{rows}筆資料更新");
+                        MessageBox.Show("基本資料已更新", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        UserProfile.Email = txtEmail.Text;
+                        UserProfile.Phone = txtPhone.Text;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                    
             }
 
 
@@ -150,7 +170,7 @@ namespace Online_Ordering_System
                         con.Open();
                         string updateQuery = "UPDATE [User] SET password = @password WHERE UserId = @UserId";
                         SqlCommand cmd = new SqlCommand(updateQuery, con);
-                        cmd.Parameters.AddWithValue("@password", Changepassword);
+                        cmd.Parameters.AddWithValue("@password", Changepassword.Trim());
                         cmd.Parameters.AddWithValue("@UserId", UserProfile.UserId);
                         int rows = cmd.ExecuteNonQuery();
                         con.Close();
