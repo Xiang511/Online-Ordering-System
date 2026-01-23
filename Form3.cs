@@ -97,9 +97,6 @@ namespace Online_Ordering_System
         {
             Form Form1 = new Form1();
             Form1.ShowDialog();
-
-            //Form3 form3 = this;
-            //form3.Hide();
         }
 
         private void toolStrip2_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
@@ -163,13 +160,7 @@ namespace Online_Ordering_System
                 Console.WriteLine(pictureBox1.ImageLocation);
 
             }
-            else
-            {
-                toolStripLBlUserName.Text = "Login";
-                toolStripLBlUserName.Enabled = true;
-                toolStripLblLogout.Visible = false;
-                pictureBox1.Image = null;
-            }
+           
 
         }
 
