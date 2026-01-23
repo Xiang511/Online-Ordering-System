@@ -98,9 +98,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegisterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="OrderPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,6 +109,12 @@
     </Compile>
     <Compile Include="MarketPanel.Designer.cs">
       <DependentUpon>MarketPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CartPanel.resx">
       <DependentUpon>CartPanel.cs</DependentUpon>
@@ -133,14 +136,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegisterForm.resx">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="OrderPanel.resx">
       <DependentUpon>OrderPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MarketPanel.resx">
       <DependentUpon>MarketPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

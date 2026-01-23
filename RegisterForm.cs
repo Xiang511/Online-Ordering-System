@@ -1,215 +1,24 @@
-using System;
+Ôªøusing System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Online_Ordering_System
 {
     public partial class RegisterForm : Form
     {
-        private TextBox txtUsername;
-        private TextBox txtPassword;
-        private TextBox txtConfirmPassword;
-        private TextBox txtEmail;
-        private Button btnRegister;
-        private Button btnCancel;
-        private Label lblTitle;
-        private Label lblUsername;
-        private Label lblPassword;
-        private Label lblConfirmPassword;
-        private PictureBox pictureBox1;
-        private Label label1;
-        private Label lblEmail;
-
         public RegisterForm()
         {
             InitializeComponent();
         }
 
-        private void InitializeComponent()
+        private void RegisterForm_Load(object sender, EventArgs e)
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblConfirmPassword = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Font = new System.Drawing.Font("Consolas", 14F);
-            this.txtUsername.Location = new System.Drawing.Point(753, 198);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(250, 29);
-            this.txtUsername.TabIndex = 2;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Consolas", 14F);
-            this.txtPassword.Location = new System.Drawing.Point(753, 249);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(250, 29);
-            this.txtPassword.TabIndex = 4;
-            // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Consolas", 14F);
-            this.txtConfirmPassword.Location = new System.Drawing.Point(753, 302);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(250, 29);
-            this.txtConfirmPassword.TabIndex = 6;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Consolas", 14F);
-            this.txtEmail.Location = new System.Drawing.Point(753, 350);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(250, 29);
-            this.txtEmail.TabIndex = 8;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnRegister.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold);
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(611, 412);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(392, 40);
-            this.btnRegister.TabIndex = 9;
-            this.btnRegister.Text = "Sign up";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCancel.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(611, 472);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(392, 40);
-            this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "Google";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Consolas", 72F);
-            this.lblTitle.Location = new System.Drawing.Point(592, 41);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(418, 112);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Sign Up";
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Consolas", 14F);
-            this.lblUsername.Location = new System.Drawing.Point(635, 205);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(110, 22);
-            this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "username°G";
-            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Consolas", 14F);
-            this.lblPassword.Location = new System.Drawing.Point(647, 256);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(100, 22);
-            this.lblPassword.TabIndex = 3;
-            this.lblPassword.Text = "pasword: ";
-            // 
-            // lblConfirmPassword
-            // 
-            this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.Font = new System.Drawing.Font("Consolas", 14F);
-            this.lblConfirmPassword.Location = new System.Drawing.Point(567, 302);
-            this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(180, 22);
-            this.lblConfirmPassword.TabIndex = 5;
-            this.lblConfirmPassword.Text = "confirmPassword: ";
-            this.lblConfirmPassword.Click += new System.EventHandler(this.lblConfirmPassword_Click);
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Consolas", 14F);
-            this.lblEmail.Location = new System.Drawing.Point(647, 353);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(90, 22);
-            this.lblEmail.TabIndex = 7;
-            this.lblEmail.Text = "E-mail°G";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(109, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(450, 575);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label1.Location = new System.Drawing.Point(660, 541);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(320, 22);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Already have an account? Log in";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // RegisterForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1130, 641);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblUsername);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblConfirmPassword);
-            this.Controls.Add(this.txtConfirmPassword);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.btnCancel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "RegisterForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "µ˘•U∑s±b∏π";
-            this.Load += new System.EventHandler(this.RegisterForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -220,99 +29,61 @@ namespace Online_Ordering_System
             string confirmPassword = txtConfirmPassword.Text.Trim();
             string email = txtEmail.Text.Trim();
 
-            // ≈Á√“øÈ§J
+            // È©óË≠âËº∏ÂÖ•
             if (string.IsNullOrEmpty(username))
             {
-                MessageBox.Show("Ω–øÈ§J•Œ§·¶W", "µ˘•Uø˘ª~", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ë´ãËº∏ÂÖ•Áî®Êà∂Âêç", "Ë®ªÂÜäÈåØË™§", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Focus();
                 return;
             }
 
             if (string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Ω–øÈ§J±KΩX", "µ˘•Uø˘ª~", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ë´ãËº∏ÂÖ•ÂØÜÁ¢º", "Ë®ªÂÜäÈåØË™§", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPassword.Focus();
                 return;
             }
 
             if (password.Length < 6)
             {
-                MessageBox.Show("±KΩX™¯´◊¶‹§÷ª›≠n6≠”¶r§∏", "µ˘•Uø˘ª~", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("ÂØÜÁ¢ºÈï∑Â∫¶Ëá≥Â∞ëÈúÄË¶Å6ÂÄãÂ≠óÂÖÉ", "Ë®ªÂÜäÈåØË™§", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPassword.Focus();
                 return;
             }
 
             if (password != confirmPassword)
             {
-                MessageBox.Show("®‚¶∏øÈ§J™∫±KΩX§£§@≠P", "µ˘•Uø˘ª~", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("ÂÖ©Ê¨°Ëº∏ÂÖ•ÁöÑÂØÜÁ¢º‰∏ç‰∏ÄËá¥", "Ë®ªÂÜäÈåØË™§", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtConfirmPassword.Focus();
                 return;
             }
 
-            // ¿À¨d•Œ§·¶W¨Oß_§w¶s¶b
+            // Ê™¢Êü•Áî®Êà∂ÂêçÊòØÂê¶Â∑≤Â≠òÂú®
             if (DatabaseHelper.EmailExists(email))
             {
-                MessageBox.Show("¶π email §w≥Q®œ•Œ°AΩ–øÔæ‹®‰•L email ", "µ˘•Uø˘ª~", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ê≠§ email Â∑≤Ë¢´‰ΩøÁî®ÔºåË´ãÈÅ∏ÊìáÂÖ∂‰ªñ email ", "Ë®ªÂÜäÈåØË™§", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Focus();
                 return;
             }
-            // 1. ¿À¨d±b∏π¨Oß_≠´Ω∆
+            // 1. Ê™¢Êü•Â∏≥ËôüÊòØÂê¶ÈáçË§á
             if (DatabaseHelper.UserExists(username))
             {
-                MessageBox.Show("¶π±b∏π¶W∫Ÿ§w≥Q®œ•Œ°I");
+                MessageBox.Show("Ê≠§Â∏≥ËôüÂêçÁ®±Â∑≤Ë¢´‰ΩøÁî®ÔºÅ");
                 return;
             }
 
-            // µ˘•U∑s®œ•Œ™Ã
+            // Ë®ªÂÜäÊñ∞‰ΩøÁî®ËÄÖ
             if (DatabaseHelper.RegisterUser(username, password, email))
             {
-                MessageBox.Show("µ˘•U¶®•\°IΩ–®œ•Œ∑s±b∏πµn§J°C", "µ˘•U¶®•\", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ë®ªÂÜäÊàêÂäüÔºÅË´ã‰ΩøÁî®Êñ∞Â∏≥ËôüÁôªÂÖ•„ÄÇ", "Ë®ªÂÜäÊàêÂäü", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblConfirmPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
-            RegisterForm Register = new RegisterForm();
             this.Close();
-
-        }
-
-        private void lblTitle_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
