@@ -13,6 +13,7 @@ namespace Online_Ordering_System
 
         public static int bannerIndex = 0;
 
+        public static string strImageDir = @"../../Image";
     }
     public class UserProfile
     {
@@ -27,5 +28,14 @@ namespace Online_Ordering_System
         public static int Role { get; set; }
 
         public static DateTime CreatedDate { get; set; }
+    }
+
+    public class ProductInfo
+    {
+        public static List<int> productID = new List<int>();
+        public static List<string> productName = new List<string>();
+        public static List<decimal> productPrice = new List<decimal>();
+        public static List<int> productQuantity = new List<int>();
+        public static List<string> productImage = new List<string>();
     }
 }
