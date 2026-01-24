@@ -167,6 +167,8 @@ namespace Online_Ordering_System
 
                 try
                 {
+                    int count = 0;
+
                     SqlConnection conn = DatabaseHelper.GetConnection();
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(strSearch, conn);
@@ -186,7 +188,21 @@ namespace Online_Ordering_System
                         Image ProductImg = Image.FromStream(fs);
                         imageList1.Images.Add(ProductImg);
                         fs.Close();
+                        count++;
                     }
+
+                    if (count == 0)
+                    {
+                        txtSearch.Text = "";
+
+                        txtSearch.Focus();
+
+                        ListViewItem item = new ListViewItem();                        
+                        item.Text = "查無此書";
+                        item.Font = new Font("微軟正黑體", 16, FontStyle.Bold);
+                        listView1.Items.Add(item);
+                    }
+
                     reader.Close();
                     conn.Close();
                 }
@@ -204,7 +220,7 @@ namespace Online_Ordering_System
                 return;
             }
 
-            
+
         }
     }
 }
