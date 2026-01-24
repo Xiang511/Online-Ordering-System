@@ -32,6 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.txtPic = new System.Windows.Forms.TextBox();
+            this.btnChangePhoto = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.txtConfirmpassword = new MaterialSkin.Controls.MaterialTextBox();
@@ -56,11 +59,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.LblEmail = new System.Windows.Forms.Label();
             this.LblUsername = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnChangePhoto = new System.Windows.Forms.Button();
-            this.txtPic = new System.Windows.Forms.TextBox();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.materialCard2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -94,13 +96,6 @@
             this.materialCard1.Controls.Add(this.txtConfirmpassword);
             this.materialCard1.Controls.Add(this.label8);
             this.materialCard1.Controls.Add(this.txtNewpassword);
-            this.materialCard1.Controls.Add(this.LblTotalmount);
-            this.materialCard1.Controls.Add(this.LblCreatdate);
-            this.materialCard1.Controls.Add(this.LblLv);
-            this.materialCard1.Controls.Add(this.label15);
-            this.materialCard1.Controls.Add(this.label14);
-            this.materialCard1.Controls.Add(this.label13);
-            this.materialCard1.Controls.Add(this.label12);
             this.materialCard1.Controls.Add(this.button2);
             this.materialCard1.Controls.Add(this.button1);
             this.materialCard1.Controls.Add(this.label11);
@@ -120,8 +115,37 @@
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(765, 467);
+            this.materialCard1.Size = new System.Drawing.Size(537, 467);
             this.materialCard1.TabIndex = 2;
+            // 
+            // txtPic
+            // 
+            this.txtPic.Location = new System.Drawing.Point(166, 115);
+            this.txtPic.Name = "txtPic";
+            this.txtPic.Size = new System.Drawing.Size(168, 22);
+            this.txtPic.TabIndex = 30;
+            this.txtPic.Visible = false;
+            // 
+            // btnChangePhoto
+            // 
+            this.btnChangePhoto.Location = new System.Drawing.Point(121, 113);
+            this.btnChangePhoto.Name = "btnChangePhoto";
+            this.btnChangePhoto.Size = new System.Drawing.Size(25, 23);
+            this.btnChangePhoto.TabIndex = 29;
+            this.btnChangePhoto.Text = "✏";
+            this.btnChangePhoto.UseVisualStyleBackColor = true;
+            this.btnChangePhoto.Visible = false;
+            this.btnChangePhoto.Click += new System.EventHandler(this.btnChangePhoto_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(33, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(113, 119);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
             // 
             // button3
             // 
@@ -199,7 +223,7 @@
             // 
             this.LblTotalmount.AutoSize = true;
             this.LblTotalmount.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LblTotalmount.Location = new System.Drawing.Point(625, 292);
+            this.LblTotalmount.Location = new System.Drawing.Point(88, 172);
             this.LblTotalmount.Name = "LblTotalmount";
             this.LblTotalmount.Size = new System.Drawing.Size(44, 17);
             this.LblTotalmount.TabIndex = 22;
@@ -209,7 +233,7 @@
             // 
             this.LblCreatdate.AutoSize = true;
             this.LblCreatdate.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LblCreatdate.Location = new System.Drawing.Point(625, 247);
+            this.LblCreatdate.Location = new System.Drawing.Point(88, 127);
             this.LblCreatdate.Name = "LblCreatdate";
             this.LblCreatdate.Size = new System.Drawing.Size(84, 17);
             this.LblCreatdate.TabIndex = 21;
@@ -219,7 +243,7 @@
             // 
             this.LblLv.AutoSize = true;
             this.LblLv.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LblLv.Location = new System.Drawing.Point(625, 205);
+            this.LblLv.Location = new System.Drawing.Point(88, 85);
             this.LblLv.Name = "LblLv";
             this.LblLv.Size = new System.Drawing.Size(60, 17);
             this.LblLv.TabIndex = 20;
@@ -229,7 +253,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label15.Location = new System.Drawing.Point(556, 292);
+            this.label15.Location = new System.Drawing.Point(19, 172);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(63, 17);
             this.label15.TabIndex = 19;
@@ -239,7 +263,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label14.Location = new System.Drawing.Point(556, 247);
+            this.label14.Location = new System.Drawing.Point(19, 127);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(63, 17);
             this.label14.TabIndex = 18;
@@ -249,7 +273,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.Location = new System.Drawing.Point(556, 205);
+            this.label13.Location = new System.Drawing.Point(19, 85);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 17);
             this.label13.TabIndex = 17;
@@ -259,7 +283,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label12.Location = new System.Drawing.Point(554, 158);
+            this.label12.Location = new System.Drawing.Point(17, 38);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 26);
             this.label12.TabIndex = 16;
@@ -421,39 +445,31 @@
             this.LblUsername.TabIndex = 1;
             this.LblUsername.Text = "測試人員";
             // 
-            // pictureBox1
+            // materialCard2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(33, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 119);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnChangePhoto
-            // 
-            this.btnChangePhoto.Location = new System.Drawing.Point(121, 113);
-            this.btnChangePhoto.Name = "btnChangePhoto";
-            this.btnChangePhoto.Size = new System.Drawing.Size(25, 23);
-            this.btnChangePhoto.TabIndex = 29;
-            this.btnChangePhoto.Text = "✏";
-            this.btnChangePhoto.UseVisualStyleBackColor = true;
-            this.btnChangePhoto.Visible = false;
-            this.btnChangePhoto.Click += new System.EventHandler(this.btnChangePhoto_Click);
-            // 
-            // txtPic
-            // 
-            this.txtPic.Location = new System.Drawing.Point(166, 115);
-            this.txtPic.Name = "txtPic";
-            this.txtPic.Size = new System.Drawing.Size(168, 22);
-            this.txtPic.TabIndex = 30;
-            this.txtPic.Visible = false;
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.label12);
+            this.materialCard2.Controls.Add(this.label13);
+            this.materialCard2.Controls.Add(this.label14);
+            this.materialCard2.Controls.Add(this.label15);
+            this.materialCard2.Controls.Add(this.LblLv);
+            this.materialCard2.Controls.Add(this.LblCreatdate);
+            this.materialCard2.Controls.Add(this.LblTotalmount);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(575, 120);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(200, 467);
+            this.materialCard2.TabIndex = 3;
             // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.materialCard2);
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -463,6 +479,8 @@
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.materialCard2.ResumeLayout(false);
+            this.materialCard2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,5 +518,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnChangePhoto;
         private System.Windows.Forms.TextBox txtPic;
+        private MaterialSkin.Controls.MaterialCard materialCard2;
     }
 }
