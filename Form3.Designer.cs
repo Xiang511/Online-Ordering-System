@@ -211,7 +211,6 @@
             this.toolStrip2.Size = new System.Drawing.Size(1031, 35);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
-            this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked_1);
             // 
             // toolStripLBlUserName
             // 
@@ -226,7 +225,6 @@
             this.toolStripLBlUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripLBlUserName.VisitedLinkColor = System.Drawing.Color.White;
             this.toolStripLBlUserName.Click += new System.EventHandler(this.toolStripLBlUserName_Click);
-            this.toolStripLBlUserName.OwnerChanged += new System.EventHandler(this.toolStripLBlUserName_OwnerChanged);
             // 
             // pictureBox1
             // 

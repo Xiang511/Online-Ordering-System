@@ -35,11 +35,6 @@ namespace Online_Ordering_System
             LoadUserControl<HomePanel>();
         }
 
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-            LoadUserControl<HomePanel>();
-        }
-
         private void toolStripLblHome_Paint(object sender, PaintEventArgs e)
         {
             ToolStripLabel lbl = sender as ToolStripLabel;
@@ -70,60 +65,9 @@ namespace Online_Ordering_System
             panel1.Controls.Add(userControl);
         }
 
-
-
-        private void toolStripLblLogout_Click(object sender, EventArgs e)
+        private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            DatabaseHelper.clearUserProfile();
-            globalVal.islogin = false;
-            toolStripLBlUserName.Text = "Login";
-            toolStripLBlUserName.Enabled = true; 
-            pictureBox1.Image = null;
-            MessageBox.Show("已登出！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadUserControl<HomePanel>();
-            Form1 loginForm = new Form1();
-            loginForm.ShowDialog();
-
-
-        }
-
-
-
-        private void toolStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripLBlUserName_Click(object sender, EventArgs e)
-        {
-            Form Form1 = new Form1();
-            Form1.ShowDialog();
-        }
-
-        private void toolStrip2_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripLBlUserName_OwnerChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void toolStripLblOrder_Click(object sender, EventArgs e)
-        {
-            if (globalVal.islogin)
-            {
-                LoadUserControl<OrderPanel>();
-            }
-            else
-            {
-                MessageBox.Show("請先登入會員！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Form1 loginForm = new Form1();
-                loginForm.ShowDialog();
-            }
-
         }
 
         private void toolStripLabel1_Click_1(object sender, EventArgs e)
@@ -149,19 +93,18 @@ namespace Online_Ordering_System
             }
         }
 
-        private void Form3_Activated(object sender, EventArgs e)
+        private void toolStripLblOrder_Click(object sender, EventArgs e)
         {
             if (globalVal.islogin)
             {
-                toolStripLBlUserName.Text = UserProfile.Username;
-                toolStripLblLogout.Visible = true;
-                toolStripLBlUserName.Enabled = false;
-                DatabaseHelper.GetUserProfile();
-                pictureBox1.ImageLocation = UserProfile.Photo;
-                Console.WriteLine(pictureBox1.ImageLocation);
-
+                LoadUserControl<OrderPanel>();
             }
-           
+            else
+            {
+                MessageBox.Show("請先登入會員！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Form1 loginForm = new Form1();
+                loginForm.ShowDialog();
+            }
 
         }
 
@@ -178,6 +121,58 @@ namespace Online_Ordering_System
                 loginForm.ShowDialog();
             }
         }
+
+
+        public void NotLoginState()
+        {
+            DatabaseHelper.clearUserProfile();
+            globalVal.islogin = false;
+            toolStripLBlUserName.Text = "Login";
+            toolStripLBlUserName.Enabled = true;
+            pictureBox1.Image = null;
+        }
+
+        private void toolStripLblLogout_Click(object sender, EventArgs e)
+        {
+            if (globalVal.islogin)
+            {
+                NotLoginState();
+                MessageBox.Show("已登出！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                toolStripLblLogout.Visible = false;
+                LoadUserControl<HomePanel>();
+                Form1 loginForm = new Form1();
+                loginForm.ShowDialog();
+            }
+
+        }
+
+        private void toolStripLBlUserName_Click(object sender, EventArgs e)
+        {
+            Form Form1 = new Form1();
+            Form1.ShowDialog();
+        }
+
+        private void Form3_Activated(object sender, EventArgs e)
+        {
+            if (globalVal.islogin)
+            {
+                toolStripLBlUserName.Text = UserProfile.Username;
+                toolStripLblLogout.Visible = true;
+                toolStripLBlUserName.Enabled = false;
+                DatabaseHelper.GetUserProfile();
+                pictureBox1.ImageLocation = UserProfile.Photo;
+                Console.WriteLine(pictureBox1.ImageLocation);
+
+            }
+            else
+            {
+                NotLoginState();
+            }
+
+
+        }
+
+
     }
 }
 
