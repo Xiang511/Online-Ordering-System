@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -19,15 +20,37 @@ namespace Online_Ordering_System
             InitializeComponent();
         }
 
+        public void loadProducts()
+        {
+
+
+            listView1.View = View.LargeIcon;
+            imageList1.ImageSize = new Size(120, 160);
+            listView1.LargeImageList = imageList1;
+            for (int i = 0; i < ProductInfo.productID.Count; i++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.ImageIndex = i;
+                item.Text = ProductInfo.productName[i];
+                item.Font = new Font("微軟正黑體", 12, FontStyle.Bold);
+                Console.WriteLine(item.Text);
+
+                listView1.Items.Add(item);
+            }
+
+        }
+
+        public static string strCategoryFilter = "SELECT productid,productname, price, stock,image FROM Product";
 
         public void GetProduct()
         {
+            
             try
             {
 
                 SqlConnection conn = DatabaseHelper.GetConnection();
                 conn.Open();
-                string query = "SELECT productid,productname, price, stock,image FROM Product";
+                string query = strCategoryFilter;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -72,33 +95,34 @@ namespace Online_Ordering_System
 
         private void MarketPanel_Load(object sender, EventArgs e)
         {   
-
-
                 ClearProducts();
-                GetProduct();
-                
-           
+                GetProduct();           
         }
 
-        public void loadProducts()
-        {   
-        
-
-            listView1.View = View.LargeIcon;
-            imageList1.ImageSize = new Size(120, 160);
-            listView1.LargeImageList = imageList1;
-            for (int i = 0; i < ProductInfo.productID.Count; i++)
-            {
-                ListViewItem item = new ListViewItem();
-                item.ImageIndex = i;
-                item.Text = ProductInfo.productName[i];
-                item.Font = new Font("微軟正黑體", 12, FontStyle.Bold);
-                Console.WriteLine(item.Text);
-
-                listView1.Items.Add(item);
-            }
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string CategoryStr = " SELECT productid,productname, price, stock,image FROM Product";
+            strCategoryFilter = CategoryStr;
+            ClearProducts();
+            GetProduct();
         }
+
+        private void btnCategroy1_Click(object sender, EventArgs e)
+        {
+            string CategoryStr = " SELECT productid,productname, price, stock,image FROM Product where categoryid = 1 ";
+            strCategoryFilter = CategoryStr;
+            ClearProducts();
+            GetProduct();
+        }
+
+        private void btnCategroy2_Click(object sender, EventArgs e)
+        {
+            string CategoryStr = " SELECT productid,productname, price, stock,image FROM Product where categoryid = 2 ";
+            strCategoryFilter = CategoryStr;
+            ClearProducts();
+            GetProduct();
+        }
+
 
     }
 }

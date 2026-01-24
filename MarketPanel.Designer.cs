@@ -35,10 +35,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCategroy1 = new System.Windows.Forms.Button();
+            this.btnCategroy2 = new System.Windows.Forms.Button();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.materialCard1.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.SuspendLayout();
@@ -130,37 +131,40 @@
             this.materialCard1.Size = new System.Drawing.Size(721, 415);
             this.materialCard1.TabIndex = 8;
             // 
-            // button2
+            // btnCategroy1
             // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(11, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 41);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "科技";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCategroy1.BackColor = System.Drawing.Color.Orange;
+            this.btnCategroy1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategroy1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnCategroy1.ForeColor = System.Drawing.Color.White;
+            this.btnCategroy1.Location = new System.Drawing.Point(17, 55);
+            this.btnCategroy1.Name = "btnCategroy1";
+            this.btnCategroy1.Size = new System.Drawing.Size(70, 41);
+            this.btnCategroy1.TabIndex = 9;
+            this.btnCategroy1.Text = "科技";
+            this.btnCategroy1.UseVisualStyleBackColor = false;
+            this.btnCategroy1.Click += new System.EventHandler(this.btnCategroy1_Click);
             // 
-            // button3
+            // btnCategroy2
             // 
-            this.button3.BackColor = System.Drawing.Color.LimeGreen;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(11, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 41);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "運動";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCategroy2.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnCategroy2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategroy2.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnCategroy2.ForeColor = System.Drawing.Color.White;
+            this.btnCategroy2.Location = new System.Drawing.Point(17, 102);
+            this.btnCategroy2.Name = "btnCategroy2";
+            this.btnCategroy2.Size = new System.Drawing.Size(70, 41);
+            this.btnCategroy2.TabIndex = 10;
+            this.btnCategroy2.Text = "運動";
+            this.btnCategroy2.UseVisualStyleBackColor = false;
+            this.btnCategroy2.Click += new System.EventHandler(this.btnCategroy2_Click);
             // 
             // materialCard2
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard2.Controls.Add(this.button2);
-            this.materialCard2.Controls.Add(this.button3);
+            this.materialCard2.Controls.Add(this.btnCategroy1);
+            this.materialCard2.Controls.Add(this.btnCategroy2);
             this.materialCard2.Depth = 0;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard2.Location = new System.Drawing.Point(764, 191);
@@ -176,6 +180,20 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Tan;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(17, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 41);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "全部";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MarketPanel
             // 
@@ -204,9 +222,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listView1;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCategroy1;
+        private System.Windows.Forms.Button btnCategroy2;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button button2;
     }
 }
