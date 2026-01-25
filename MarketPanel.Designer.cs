@@ -38,12 +38,12 @@
             this.btnCategroy1 = new System.Windows.Forms.Button();
             this.btnCategroy2 = new System.Windows.Forms.Button();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.materialCard1.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -122,6 +122,7 @@
             this.listView1.Size = new System.Drawing.Size(719, 415);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.ItemActivate += new System.EventHandler(this.listView1_ItemActivate);
             // 
             // materialCard1
             // 
@@ -181,12 +182,6 @@
             this.materialCard2.Size = new System.Drawing.Size(104, 415);
             this.materialCard2.TabIndex = 11;
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Tan;
@@ -201,6 +196,12 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButton3);
@@ -211,6 +212,28 @@
             this.groupBox1.Size = new System.Drawing.Size(183, 48);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.radioButton3.Location = new System.Drawing.Point(127, 22);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(54, 20);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.Text = "ISBN";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.radioButton2.Location = new System.Drawing.Point(60, 22);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(61, 20);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "出版商";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -224,28 +247,6 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "書名";
             this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.radioButton2.Location = new System.Drawing.Point(60, 22);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 20);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "出版商";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.radioButton3.Location = new System.Drawing.Point(127, 22);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(54, 20);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.Text = "ISBN";
-            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // MarketPanel
             // 

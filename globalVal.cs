@@ -14,6 +14,8 @@ namespace Online_Ordering_System
         public static int bannerIndex = 0;
 
         public static string strImageDir = @"../../Image";
+
+        public static int LoadId = 0 ;
     }
     public class UserProfile
     {

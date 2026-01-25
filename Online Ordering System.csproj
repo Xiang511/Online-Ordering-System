@@ -85,6 +85,12 @@
     <Compile Include="HomePanel.Designer.cs">
       <DependentUpon>HomePanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductDetail.Designer.cs">
+      <DependentUpon>ProductDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomePanel.resx">
       <DependentUpon>HomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductDetail.resx">
+      <DependentUpon>ProductDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>

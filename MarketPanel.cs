@@ -222,5 +222,15 @@ namespace Online_Ordering_System
 
 
         }
+
+        private void listView1_ItemActivate(object sender, EventArgs e)
+        {
+            ProductDetail productDetailForm = new ProductDetail();
+            productDetailForm.ShowDialog();
+
+
+            globalVal.LoadId = ProductInfo.productID[listView1.FocusedItem.Index];
+            
+        }
     }
 }
