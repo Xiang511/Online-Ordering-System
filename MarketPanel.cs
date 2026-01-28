@@ -34,8 +34,11 @@ namespace Online_Ordering_System
                 Lvitem.ImageIndex = item.productID-1;
                 Lvitem.Text = item.productName;
                 Lvitem.Font = new Font("微軟正黑體", 12, FontStyle.Bold);
+                Lvitem.Tag = item.productID;
                 //Console.WriteLine(Lvitem.Text);
+                //Console.WriteLine(Lvitem.Tag);
                 listView1.Items.Add(Lvitem);
+
             }
 
 
@@ -238,11 +241,13 @@ namespace Online_Ordering_System
         private void listView1_ItemActivate(object sender, EventArgs e)
         {
             ProductDetail productDetailForm = new ProductDetail();
+            globalVal.LoadId = (int)listView1.SelectedItems[0].Tag;
+            Console.WriteLine(globalVal.LoadId);
             productDetailForm.ShowDialog();
 
+      
 
-           
-            
+
         }
     }
 }

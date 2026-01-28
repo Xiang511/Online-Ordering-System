@@ -39,32 +39,32 @@
             this.LblISBN = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.label8 = new System.Windows.Forms.Label();
             this.LblPrice = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.BtnAddToCart = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.LblStock = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.txtdescription = new System.Windows.Forms.TextBox();
-            this.LblStock = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.BtnAddToCart = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.materialCard2.SuspendLayout();
             this.materialCard3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // LblBookName
             // 
             this.LblBookName.AutoSize = true;
             this.LblBookName.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LblBookName.Location = new System.Drawing.Point(23, 422);
+            this.LblBookName.Location = new System.Drawing.Point(27, 383);
             this.LblBookName.Name = "LblBookName";
             this.LblBookName.Size = new System.Drawing.Size(127, 26);
             this.LblBookName.TabIndex = 0;
@@ -73,9 +73,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(81, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(333, 341);
+            this.pictureBox1.Size = new System.Drawing.Size(207, 278);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -163,12 +163,22 @@
             this.materialCard1.Size = new System.Drawing.Size(390, 669);
             this.materialCard1.TabIndex = 9;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.Location = new System.Drawing.Point(28, 543);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 20);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "購買數量";
+            // 
             // LblPrice
             // 
             this.LblPrice.AutoSize = true;
             this.LblPrice.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.LblPrice.ForeColor = System.Drawing.Color.DarkCyan;
-            this.LblPrice.Location = new System.Drawing.Point(292, 422);
+            this.LblPrice.Location = new System.Drawing.Point(75, 435);
             this.LblPrice.Name = "LblPrice";
             this.LblPrice.Size = new System.Drawing.Size(63, 35);
             this.LblPrice.TabIndex = 11;
@@ -178,11 +188,51 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(246, 427);
+            this.label4.Location = new System.Drawing.Point(29, 440);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "NT$";
+            // 
+            // BtnAddToCart
+            // 
+            this.BtnAddToCart.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddToCart.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.BtnAddToCart.ForeColor = System.Drawing.Color.White;
+            this.BtnAddToCart.Location = new System.Drawing.Point(28, 587);
+            this.BtnAddToCart.Name = "BtnAddToCart";
+            this.BtnAddToCart.Size = new System.Drawing.Size(330, 55);
+            this.BtnAddToCart.TabIndex = 11;
+            this.BtnAddToCart.Text = "加入購物車";
+            this.BtnAddToCart.UseVisualStyleBackColor = false;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.numericUpDown1.Location = new System.Drawing.Point(119, 534);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.numericUpDown1.Size = new System.Drawing.Size(76, 29);
+            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Enter += new System.EventHandler(this.numericUpDown1_Enter);
+            // 
+            // LblStock
+            // 
+            this.LblStock.AutoSize = true;
+            this.LblStock.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.LblStock.Location = new System.Drawing.Point(115, 490);
+            this.LblStock.Name = "LblStock";
+            this.LblStock.Size = new System.Drawing.Size(59, 21);
+            this.LblStock.TabIndex = 12;
+            this.LblStock.Text = "10test";
             // 
             // label3
             // 
@@ -190,11 +240,21 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(20, 368);
+            this.label3.Location = new System.Drawing.Point(17, 327);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(334, 24);
             this.label3.TabIndex = 9;
             this.label3.Text = "____________________________________";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label10.Location = new System.Drawing.Point(24, 490);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 20);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "剩餘數量:";
             // 
             // materialCard2
             // 
@@ -224,26 +284,6 @@
             this.txtdescription.TabIndex = 13;
             this.txtdescription.Text = "深入淺出學習 MSSQL 資料庫設計與優化";
             // 
-            // LblStock
-            // 
-            this.LblStock.AutoSize = true;
-            this.LblStock.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LblStock.Location = new System.Drawing.Point(115, 490);
-            this.LblStock.Name = "LblStock";
-            this.LblStock.Size = new System.Drawing.Size(59, 21);
-            this.LblStock.TabIndex = 12;
-            this.LblStock.Text = "10test";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.Location = new System.Drawing.Point(24, 490);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 20);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "剩餘數量:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -253,19 +293,6 @@
             this.label7.Size = new System.Drawing.Size(73, 20);
             this.label7.TabIndex = 9;
             this.label7.Text = "書籍介紹";
-            // 
-            // BtnAddToCart
-            // 
-            this.BtnAddToCart.BackColor = System.Drawing.Color.DarkCyan;
-            this.BtnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAddToCart.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.BtnAddToCart.ForeColor = System.Drawing.Color.White;
-            this.BtnAddToCart.Location = new System.Drawing.Point(28, 587);
-            this.BtnAddToCart.Name = "BtnAddToCart";
-            this.BtnAddToCart.Size = new System.Drawing.Size(330, 55);
-            this.BtnAddToCart.TabIndex = 11;
-            this.BtnAddToCart.Text = "加入購物車";
-            this.BtnAddToCart.UseVisualStyleBackColor = false;
             // 
             // imageList1
             // 
@@ -293,16 +320,6 @@
             this.materialCard3.Size = new System.Drawing.Size(351, 242);
             this.materialCard3.TabIndex = 12;
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.numericUpDown1.Location = new System.Drawing.Point(119, 534);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(76, 29);
-            this.numericUpDown1.TabIndex = 2;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -312,16 +329,6 @@
             this.label5.Size = new System.Drawing.Size(105, 20);
             this.label5.TabIndex = 14;
             this.label5.Text = "商品詳細資訊";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(28, 543);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 20);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "購買數量";
             // 
             // ProductDetail
             // 
@@ -339,11 +346,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }

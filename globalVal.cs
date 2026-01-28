@@ -39,6 +39,15 @@ namespace Online_Ordering_System
         public decimal productPrice { get; set; }
         public int productQuantity { get; set; }
         public string productImage { get; set; }
+
+        public string productDescription { get; set; }
+        public string productStatus { get; set; }
+
+        public int productCategotyid { get; set; }
+
+        public String productISBN { get; set; }
+
+        public String productPublisher { get; set; }
     }
 
     public class ProductList
