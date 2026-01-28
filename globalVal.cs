@@ -16,6 +16,8 @@ namespace Online_Ordering_System
         public static string strImageDir = @"../../Image";
 
         public static int LoadId = 0 ;
+
+        public static int currentid = 0;
     }
     public class UserProfile
     {
@@ -53,5 +55,20 @@ namespace Online_Ordering_System
     public class ProductList
     {
         public static List<ProductInfo> InfoList = new List<ProductInfo>();
+    }
+
+    public class CartInfo
+    {
+        public int productID { get; set; }
+        public string productName { get; set; }
+        public decimal productPrice { get; set; }
+        public int productQuantity { get; set; }
+        public string productImage { get; set; }
+        public int orderQuantity { get; set; }
+    }
+
+    public class CartList
+    {
+        public static List<CartInfo> InfoList = new List<CartInfo>();
     }
 }

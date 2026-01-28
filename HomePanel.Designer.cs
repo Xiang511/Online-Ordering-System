@@ -274,6 +274,7 @@
             this.Controls.Add(this.BannerSlider);
             this.Name = "HomePanel";
             this.Size = new System.Drawing.Size(953, 641);
+            this.Load += new System.EventHandler(this.HomePanel_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             this.materialCard2.ResumeLayout(false);

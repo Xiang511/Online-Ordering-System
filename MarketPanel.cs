@@ -21,7 +21,7 @@ namespace Online_Ordering_System
         }
 
         public void loadProducts()
-        {
+        {   
 
 
             listView1.View = View.LargeIcon;
@@ -243,6 +243,7 @@ namespace Online_Ordering_System
             ProductDetail productDetailForm = new ProductDetail();
             globalVal.LoadId = (int)listView1.SelectedItems[0].Tag;
             Console.WriteLine(globalVal.LoadId);
+            //Console.WriteLine(globalVal.LoadId);
             productDetailForm.ShowDialog();
 
       

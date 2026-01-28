@@ -37,5 +37,10 @@ namespace Online_Ordering_System
         {
 
         }
+
+        private void HomePanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

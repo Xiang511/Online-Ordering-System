@@ -206,6 +206,7 @@
             this.BtnAddToCart.TabIndex = 11;
             this.BtnAddToCart.Text = "加入購物車";
             this.BtnAddToCart.UseVisualStyleBackColor = false;
+            this.BtnAddToCart.Click += new System.EventHandler(this.BtnAddToCart_Click);
             // 
             // numericUpDown1
             // 

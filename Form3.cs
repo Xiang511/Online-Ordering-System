@@ -52,7 +52,7 @@ namespace Online_Ordering_System
         /// 載入 UserControl 到 panel1 的共用方法
         /// </summary>
         /// <typeparam name="T">UserControl 類型</typeparam>
-        private void LoadUserControl<T>() where T : UserControl, new()
+        public void LoadUserControl<T>() where T : UserControl, new()
         {
             // 清除 panel1 中的所有控件
             panel1.Controls.Clear();
