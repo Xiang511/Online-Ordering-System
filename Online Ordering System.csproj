@@ -85,6 +85,11 @@
     <Compile Include="HomePanel.Designer.cs">
       <DependentUpon>HomePanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="OnlineOrderingSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnlineOrderingSystemDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProductDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +159,18 @@
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="OnlineOrderingSystemDataSet.xsc">
+      <DependentUpon>OnlineOrderingSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OnlineOrderingSystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OnlineOrderingSystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OnlineOrderingSystemDataSet.xss">
+      <DependentUpon>OnlineOrderingSystemDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

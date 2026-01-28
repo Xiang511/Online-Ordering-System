@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,18 +19,107 @@ namespace Online_Ordering_System
             InitializeComponent();
         }
 
-        private void UserControl1_Load(object sender, EventArgs e)
+        void LoadAllMemberDataTodataGridView1()
         {
-            pictureBox1.Image = new Bitmap(pictureBox1.Image, new Size(38, 38));
+            SqlConnection con = DatabaseHelper.GetConnection();
+            con.Open();
+            string strsql = "select * from orders";
+            SqlCommand cmd = new SqlCommand(strsql, con);
+            SqlDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            dataGridView1.DataSource = dt;
+            int Count = dt.Rows.Count;
+            Console.WriteLine($"dataGridView1筆數: {Count}");
+            reader.Close();
+            con.Close();
 
         }
 
-
-        
-
-        private void label6_Click(object sender, EventArgs e)
+        void ShowOrderDetail(int orderid)
         {
+            listView2.Clear();
+            imageList2.Images.Clear();
+            OrderList.InfoList.Clear();
 
+            SqlConnection con = DatabaseHelper.GetConnection();
+            con.Open();
+            string strsql = "select * from Orders o inner join OrderDetail od on o.orderid = od.orderid inner join product p on od.productid = p.productid where o.orderid = @OrderId";
+            SqlCommand cmd = new SqlCommand(strsql, con);
+            cmd.Parameters.AddWithValue("@OrderId", orderid);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            listView2.View = View.Details;
+            imageList2.ImageSize = new Size(120, 160);
+            listView2.SmallImageList = imageList2;
+            listView2.FullRowSelect = true;
+
+            while (reader.Read())
+            {
+                OrderInfo orderInfo = new OrderInfo();
+
+                orderInfo.productID = (int)reader["productid"];
+                orderInfo.productName = (string)reader["productname"];
+                orderInfo.productPrice = (decimal)reader["price"];
+                orderInfo.productQuantity = (int)reader["quantity"];
+                orderInfo.productImage = (string)reader["image"];
+
+                OrderList.InfoList.Add(orderInfo);
+                string imageName = (string)reader["image"];
+                string ImageDir = globalVal.strImageDir + @"/" + imageName;
+                FileStream fs = File.OpenRead(ImageDir);
+                Image ProductImg = Image.FromStream(fs);
+                imageList2.Images.Add(orderInfo.productID.ToString(), ProductImg);
+                fs.Close();
+
+                listView2.Columns.Clear();
+                listView2.Items.Clear();
+                listView2.Columns.Add("商品圖片", 120);
+                listView2.Columns.Add("商品名稱", 120);
+                listView2.Columns.Add("單價", 110);
+                listView2.Columns.Add("數量", 60);
+                listView2.Columns.Add("小計", 110);
+
+                foreach (OrderInfo item in OrderList.InfoList)
+                {
+                    ListViewItem lvi = new ListViewItem();
+
+                    lvi.ImageKey = item.productID.ToString();
+                    lvi.SubItems.Add(item.productName);
+
+                    lvi.SubItems.Add(item.productPrice.ToString("C")); // 格式化為貨幣
+                    lvi.SubItems.Add(item.productQuantity.ToString());
+                    lvi.SubItems.Add((item.productPrice * item.productQuantity).ToString("C"));
+
+                    listView2.Items.Add(lvi);
+
+                    lvi.Tag = item.productID;
+
+                    Console.WriteLine($"{item.productName}, {item.productPrice}, {item.productQuantity}");
+                }
+            }
+
+
+
+
+            reader.Close();
+            con.Close();
+        }
+
+        private void OrderPanel_Load(object sender, EventArgs e)
+        {
+            LoadAllMemberDataTodataGridView1();
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.RowIndex >= 0) && (e.ColumnIndex >= 0))
+            {
+                int selectid = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
+
+                ShowOrderDetail(selectid);
+            }
         }
     }
 }

@@ -71,4 +71,19 @@ namespace Online_Ordering_System
     {
         public static List<CartInfo> InfoList = new List<CartInfo>();
     }
+
+    public class OrderInfo
+    {
+        public int productID { get; set; }
+        public string productName { get; set; }
+        public decimal productPrice { get; set; }
+        public int productQuantity { get; set; }
+        public string productImage { get; set; }
+        public int orderQuantity { get; set; }
+    }
+
+    public class OrderList
+    {
+        public static List<OrderInfo> InfoList = new List<OrderInfo>();
+    }
 }

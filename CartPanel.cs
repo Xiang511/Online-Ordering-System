@@ -183,5 +183,42 @@ namespace Online_Ordering_System
             Form3 form3 = this.FindForm() as Form3;
             form3.LoadUserControl<MarketPanel>();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+
+
+                string query = @"INSERT INTO [Orders] (userid, orderdate, totalamount, status) 
+                     VALUES (@userid, @orderdate, @totalamount, @status);
+                     SELECT SCOPE_IDENTITY();"; 
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@userid", UserProfile.UserId);
+                cmd.Parameters.AddWithValue("@orderdate", DateTime.Now);
+                cmd.Parameters.AddWithValue("@totalamount", CalculateTotalPrice());
+                cmd.Parameters.AddWithValue("@status", "未處理");
+
+                object result = cmd.ExecuteScalar();
+                int newOrderId = Convert.ToInt32(result);
+
+                foreach (CartInfo item in CartList.InfoList)
+                {
+                    int productId = item.productID;
+                    int quantity = item.orderQuantity;
+                    decimal price = item.productPrice;
+                    string query2 = "INSERT INTO OrderDetail (orderid, productid, quantity, price) VALUES (@orderid, @productid, @quantity, @price);";
+                    SqlCommand cmd2 = new SqlCommand(query2, conn); 
+                    cmd2.Parameters.AddWithValue("@orderid", newOrderId); 
+                    cmd2.Parameters.AddWithValue("@productid", productId);
+                    cmd2.Parameters.AddWithValue("@quantity", quantity);
+                    cmd2.Parameters.AddWithValue("@price", price);
+                    cmd2.ExecuteNonQuery();
+                }
+                MessageBox.Show($"訂單編號 {newOrderId} 已成功建立！");
+            }
+        }
     }
 }
