@@ -125,7 +125,6 @@
             this.label2.Size = new System.Drawing.Size(137, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "查看訂單歷史紀錄";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 

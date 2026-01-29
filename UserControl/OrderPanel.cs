@@ -23,8 +23,9 @@ namespace Online_Ordering_System
         {
             SqlConnection con = DatabaseHelper.GetConnection();
             con.Open();
-            string strsql = "select * from orders";
+            string strsql = "select * from orders where userid = @UserId";
             SqlCommand cmd = new SqlCommand(strsql, con);
+            cmd.Parameters.AddWithValue("@UserId", UserProfile.UserId);
             SqlDataReader reader = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(reader);
@@ -44,15 +45,18 @@ namespace Online_Ordering_System
 
             SqlConnection con = DatabaseHelper.GetConnection();
             con.Open();
-            string strsql = "select * from Orders o inner join OrderDetail od on o.orderid = od.orderid inner join product p on od.productid = p.productid where o.orderid = @OrderId";
+            string strsql = "select * from Orders o inner join OrderDetail od on o.orderid = od.orderid inner join product p on od.productid = p.productid where o.orderid = @OrderId and o.userid = @UserId";
             SqlCommand cmd = new SqlCommand(strsql, con);
+            cmd.Parameters.AddWithValue("@UserId", UserProfile.UserId);
             cmd.Parameters.AddWithValue("@OrderId", orderid);
+
             SqlDataReader reader = cmd.ExecuteReader();
 
             listView2.View = View.Details;
             imageList2.ImageSize = new Size(120, 160);
             listView2.SmallImageList = imageList2;
             listView2.FullRowSelect = true;
+
 
             while (reader.Read())
             {
@@ -120,11 +124,6 @@ namespace Online_Ordering_System
 
                 ShowOrderDetail(selectid);
             }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
