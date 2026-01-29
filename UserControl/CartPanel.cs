@@ -24,8 +24,7 @@ namespace Online_Ordering_System
         {
             Lblitemcount.Text = $"共 {CartList.InfoList.Count.ToString()} 件商品";
             Lblprice.Text = $"總價: {(decimal)price()}";
-            Lblshipvia.Text = $"運費: {(CartList.InfoList.Count > 0 && price() < 1000 ? 60 : 0)}";
-            Lbltotalmount.Text = $"總計: {(decimal)CalculateTotalPrice()}";
+
             listView1.View = View.Details;
             imageList1.ImageSize = new Size(120, 160);
             listView1.SmallImageList = imageList1;
@@ -33,7 +32,8 @@ namespace Online_Ordering_System
 
             if (CartList.InfoList.Count > 0)
             {
-
+                Lblshipvia.Text = $"運費: {(CartList.InfoList.Count > 0 && price() < 1000 ? 60 : 0)}";
+                Lbltotalmount.Text = $"總計: {(decimal)CalculateTotalPrice()}";
 
                 try
                 {
@@ -102,25 +102,32 @@ namespace Online_Ordering_System
 
         decimal CalculateTotalPrice()
         {
-            decimal totalPrice = 0;
-            decimal shipvia = 0;
-
-            foreach (CartInfo item in CartList.InfoList)
+            if(CartList.InfoList.Count == 0)
             {
-                totalPrice += item.productPrice * item.orderQuantity;
-            }
-            if (totalPrice < 1000)
-            {
-                shipvia = 60;
-                totalPrice += shipvia;
-
+                return 0;
             }else
             {
-                shipvia = 0;
+                decimal totalPrice = 0;
+                decimal shipvia = 0;
+
+                foreach (CartInfo item in CartList.InfoList)
+                {
+                    totalPrice += item.productPrice * item.orderQuantity;
+                }
+                if (totalPrice < 1000)
+                {
+                    shipvia = 60;
+                    totalPrice += shipvia;
+
+                }
+                else
+                {
+                    shipvia = 0;
+                }
+
+                return totalPrice;
+
             }
-
-            return totalPrice;
-
         }
 
         private void listView1_ItemActivate(object sender, EventArgs e)
@@ -175,50 +182,61 @@ namespace Online_Ordering_System
             {
                 MessageBox.Show("購物車已清空，請返回商品頁面選購商品。", "購物車空", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 listView1.Clear();
+                Lbltotalmount.Text = "0";
+                Lblshipvia.Text = "0";
+                Lblprice.Text = "0";
             }
         }
 
         private void label10_Click(object sender, EventArgs e)
-        {   
+        {
             Form3 form3 = this.FindForm() as Form3;
             form3.LoadUserControl<MarketPanel>();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            if (CartList.InfoList.Count > 0)
             {
-                conn.Open();
-
-
-                string query = @"INSERT INTO [Orders] (userid, orderdate, totalamount, status) 
-                     VALUES (@userid, @orderdate, @totalamount, @status);
-                     SELECT SCOPE_IDENTITY();"; 
-
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@userid", UserProfile.UserId);
-                cmd.Parameters.AddWithValue("@orderdate", DateTime.Now);
-                cmd.Parameters.AddWithValue("@totalamount", CalculateTotalPrice());
-                cmd.Parameters.AddWithValue("@status", "未處理");
-
-                object result = cmd.ExecuteScalar();
-                int newOrderId = Convert.ToInt32(result);
-
-                foreach (CartInfo item in CartList.InfoList)
+                using (SqlConnection conn = DatabaseHelper.GetConnection())
                 {
-                    int productId = item.productID;
-                    int quantity = item.orderQuantity;
-                    decimal price = item.productPrice;
-                    string query2 = "INSERT INTO OrderDetail (orderid, productid, quantity, price) VALUES (@orderid, @productid, @quantity, @price);";
-                    SqlCommand cmd2 = new SqlCommand(query2, conn); 
-                    cmd2.Parameters.AddWithValue("@orderid", newOrderId); 
-                    cmd2.Parameters.AddWithValue("@productid", productId);
-                    cmd2.Parameters.AddWithValue("@quantity", quantity);
-                    cmd2.Parameters.AddWithValue("@price", price);
-                    cmd2.ExecuteNonQuery();
+                    conn.Open();
+
+
+                    string query = @"INSERT INTO [Orders] (userid, orderdate, totalamount, status) 
+                     VALUES (@userid, @orderdate, @totalamount, @status);
+                     SELECT SCOPE_IDENTITY();";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@userid", UserProfile.UserId);
+                    cmd.Parameters.AddWithValue("@orderdate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@totalamount", CalculateTotalPrice());
+                    cmd.Parameters.AddWithValue("@status", "未處理");
+
+                    object result = cmd.ExecuteScalar();
+                    int newOrderId = Convert.ToInt32(result);
+
+                    foreach (CartInfo item in CartList.InfoList)
+                    {
+                        int productId = item.productID;
+                        int quantity = item.orderQuantity;
+                        decimal price = item.productPrice;
+                        string query2 = "INSERT INTO OrderDetail (orderid, productid, quantity, price) VALUES (@orderid, @productid, @quantity, @price);";
+                        SqlCommand cmd2 = new SqlCommand(query2, conn);
+                        cmd2.Parameters.AddWithValue("@orderid", newOrderId);
+                        cmd2.Parameters.AddWithValue("@productid", productId);
+                        cmd2.Parameters.AddWithValue("@quantity", quantity);
+                        cmd2.Parameters.AddWithValue("@price", price);
+                        cmd2.ExecuteNonQuery();
+                    }
+                    MessageBox.Show($"訂單編號 {newOrderId} 已成功建立！");
                 }
-                MessageBox.Show($"訂單編號 {newOrderId} 已成功建立！");
             }
+            else
+            {
+                MessageBox.Show("購物車為空，無法結帳。請先加入商品至購物車。", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
     }
 }
