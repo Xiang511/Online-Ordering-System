@@ -120,6 +120,8 @@ namespace Online_Ordering_System
 
         public static string strCategoryFilter = "SELECT productid,productname, price, stock,image FROM Product";
 
+        public static string strCategoryFilterDefault = "SELECT productid,productname, price, stock,image FROM Product";
+
         private void button2_Click(object sender, EventArgs e)
         {
             string CategoryStr = " SELECT productid,productname, price, stock,image FROM Product";
@@ -127,7 +129,7 @@ namespace Online_Ordering_System
             ClearProducts();
             GetProduct();
             ResetCategoryFilter();
-
+            strCategoryFilter = strCategoryFilterDefault;
         }
 
         private void btnCategroy1_Click(object sender, EventArgs e)
@@ -137,6 +139,7 @@ namespace Online_Ordering_System
             ClearProducts();
             GetProduct();
             ResetCategoryFilter();
+            strCategoryFilter = strCategoryFilterDefault;
         }
 
         private void btnCategroy2_Click(object sender, EventArgs e)
@@ -146,6 +149,7 @@ namespace Online_Ordering_System
             ClearProducts();
             GetProduct();
             ResetCategoryFilter();
+            strCategoryFilter = strCategoryFilterDefault;
         }
 
         public static string strSearchFilter = "";
