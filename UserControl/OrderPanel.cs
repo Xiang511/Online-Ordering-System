@@ -121,5 +121,10 @@ namespace Online_Ordering_System
                 ShowOrderDetail(selectid);
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

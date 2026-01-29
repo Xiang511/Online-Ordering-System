@@ -59,10 +59,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CartPanel.cs">
+    <Compile Include="UserControl\CartPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CartPanel.Designer.cs">
+    <Compile Include="UserControl\CartPanel.Designer.cs">
       <DependentUpon>CartPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHelper.cs" />
@@ -79,10 +79,10 @@
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="globalVal.cs" />
-    <Compile Include="HomePanel.cs">
+    <Compile Include="UserControl\HomePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HomePanel.Designer.cs">
+    <Compile Include="UserControl\HomePanel.Designer.cs">
       <DependentUpon>HomePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="OnlineOrderingSystemDataSet.Designer.cs">
@@ -96,10 +96,10 @@
     <Compile Include="ProductDetail.Designer.cs">
       <DependentUpon>ProductDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profile.cs">
+    <Compile Include="UserControl\Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Profile.Designer.cs">
+    <Compile Include="UserControl\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -109,16 +109,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="OrderPanel.cs">
+    <Compile Include="UserControl\OrderPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="OrderPanel.Designer.cs">
+    <Compile Include="UserControl\OrderPanel.Designer.cs">
       <DependentUpon>OrderPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="MarketPanel.cs">
+    <Compile Include="UserControl\MarketPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MarketPanel.Designer.cs">
+    <Compile Include="UserControl\MarketPanel.Designer.cs">
       <DependentUpon>MarketPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="RegisterForm.cs">
@@ -127,7 +127,7 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CartPanel.resx">
+    <EmbeddedResource Include="UserControl\CartPanel.resx">
       <DependentUpon>CartPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -136,13 +136,13 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePanel.resx">
+    <EmbeddedResource Include="UserControl\HomePanel.resx">
       <DependentUpon>HomePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductDetail.resx">
       <DependentUpon>ProductDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profile.resx">
+    <EmbeddedResource Include="UserControl\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -150,10 +150,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderPanel.resx">
+    <EmbeddedResource Include="UserControl\OrderPanel.resx">
       <DependentUpon>OrderPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MarketPanel.resx">
+    <EmbeddedResource Include="UserControl\MarketPanel.resx">
       <DependentUpon>MarketPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
