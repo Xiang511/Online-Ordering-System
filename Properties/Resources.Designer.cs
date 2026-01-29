@@ -69,5 +69,25 @@ namespace Online_Ordering_System.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 螢幕擷取畫面_2026_01_17_200526 {
+            get {
+                object obj = ResourceManager.GetObject("螢幕擷取畫面 2026-01-17 200526", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 螢幕擷取畫面_2026_01_17_2005261 {
+            get {
+                object obj = ResourceManager.GetObject("螢幕擷取畫面 2026-01-17 2005261", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

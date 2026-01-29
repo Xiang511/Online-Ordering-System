@@ -5,7 +5,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,7 +50,7 @@ namespace Online_Ordering_System
             }
             else
             {
-                pictureBox1.ImageLocation = photo;
+                LoadAvatarFromUrl();
                 txtPic.Text = photo;
             }
 
@@ -234,7 +236,7 @@ namespace Online_Ordering_System
         {
 
             UserProfile.Photo = txtPic.Text;
-            pictureBox1.ImageLocation = UserProfile.Photo;
+            LoadAvatarFromUrl();
 
             UserProfile.Photo = txtPic.Text;
             SqlConnection con = DatabaseHelper.GetConnection();
@@ -248,5 +250,30 @@ namespace Online_Ordering_System
             Console.WriteLine($"共{rows}筆資料更新");
             MessageBox.Show("大頭貼已更新", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        public async Task LoadAvatarFromUrl()
+        {
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    // 下載資料流
+                    byte[] imageData = await client.DownloadDataTaskAsync(UserProfile.Photo);
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image img = Image.FromStream(ms);
+                        avatar1.Image = img;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // 如果網址無效或沒網路，顯示預設圖片
+                Console.WriteLine("圖片載入失敗: " + ex.Message);
+                // targetControl.BackgroundImage = Properties.Resources.DefaultAvatar; 
+            }
+        }
     }
+
+
 }

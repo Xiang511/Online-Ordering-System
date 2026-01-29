@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -129,7 +131,8 @@ namespace Online_Ordering_System
             globalVal.islogin = false;
             toolStripLBlUserName.Text = "Login";
             toolStripLBlUserName.Enabled = true;
-            pictureBox1.Image = null;
+            avatar1.Image = null;
+            avatar1.Refresh();
         }
 
         private void toolStripLblLogout_Click(object sender, EventArgs e)
@@ -160,8 +163,8 @@ namespace Online_Ordering_System
                 toolStripLblLogout.Visible = true;
                 toolStripLBlUserName.Enabled = false;
                 DatabaseHelper.GetUserProfile();
-                pictureBox1.ImageLocation = UserProfile.Photo;
-                Console.WriteLine(pictureBox1.ImageLocation);
+                
+                LoadAvatarFromUrl();
 
             }
             else
@@ -170,6 +173,29 @@ namespace Online_Ordering_System
             }
 
 
+        }
+
+        public async Task LoadAvatarFromUrl()
+        {
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    // 下載資料流
+                    byte[] imageData = await client.DownloadDataTaskAsync(UserProfile.Photo);
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image img = Image.FromStream(ms);
+                        avatar1.Image = img;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // 如果網址無效或沒網路，顯示預設圖片
+                Console.WriteLine("圖片載入失敗: " + ex.Message);
+                // targetControl.BackgroundImage = Properties.Resources.DefaultAvatar; 
+            }
         }
 
 
