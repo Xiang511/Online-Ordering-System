@@ -71,6 +71,8 @@ namespace Online_Ordering_System
                     break;
             }
             LblLv.Text = level;
+
+            TotalAmountSpent();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -271,6 +273,24 @@ namespace Online_Ordering_System
                 // 如果網址無效或沒網路，顯示預設圖片
                 Console.WriteLine("圖片載入失敗: " + ex.Message);
                 // targetControl.BackgroundImage = Properties.Resources.DefaultAvatar; 
+            }
+        }
+
+        private void TotalAmountSpent()
+        {
+            SqlConnection con = DatabaseHelper.GetConnection();
+            con.Open();
+            string query = "SELECT SUM(TotalAmount) FROM [Orders] WHERE UserId = @UserId";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@UserId", UserProfile.UserId);
+            object result = cmd.ExecuteScalar();
+            con.Close();
+
+            if (result != DBNull.Value)
+            {
+                decimal totalAmount = Convert.ToDecimal(result);
+                LblTotalmount.Text = totalAmount.ToString("C");
+                Console.WriteLine($"Total Amount Spent: {totalAmount:C}");
             }
         }
     }
