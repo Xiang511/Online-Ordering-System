@@ -23,7 +23,7 @@ namespace Online_Ordering_System
         private void CartPanel_Load(object sender, EventArgs e)
         {
             Lblitemcount.Text = $"共 {CartList.InfoList.Count.ToString()} 件商品";
-            Lblprice.Text = $"總價: {(decimal)price()}";
+            Lblprice.Text = $"{(decimal)price()}";
 
             listView1.View = View.Details;
             imageList1.ImageSize = new Size(120, 160);
@@ -32,8 +32,8 @@ namespace Online_Ordering_System
 
             if (CartList.InfoList.Count > 0)
             {
-                Lblshipvia.Text = $"運費: {(CartList.InfoList.Count > 0 && price() < 1000 ? 60 : 0)}";
-                Lbltotalmount.Text = $"總計: {(decimal)CalculateTotalPrice()}";
+                Lblshipvia.Text = $"{(CartList.InfoList.Count > 0 && price() < 1000 ? 60 : 0)}";
+                Lbltotalmount.Text = $"{(decimal)CalculateTotalPrice()}";
 
                 try
                 {
@@ -133,9 +133,9 @@ namespace Online_Ordering_System
         private void listView1_ItemActivate(object sender, EventArgs e)
         {
             Lblitemcount.Text = $"共 {CartList.InfoList.Count.ToString()} 件商品";
-            Lblprice.Text = $"總價: {(decimal)price()}";
-            Lblshipvia.Text = $"運費: {(CartList.InfoList.Count > 0 && price() < 1000 ? 60 : 0)}";
-            Lbltotalmount.Text = $"總計: {(decimal)CalculateTotalPrice()}";
+            Lblprice.Text = $"{(decimal)price()}";
+            Lblshipvia.Text = $"{(CartList.InfoList.Count > 0 && price() < 1000 ? 60 : 0)}";
+            Lbltotalmount.Text = $"{(decimal)CalculateTotalPrice()}";
             Console.WriteLine(Lblprice.Text);
             gbtool.Visible = true;
             Int32.TryParse(listView1.SelectedItems[0].SubItems[3].Text, out int quantity);
