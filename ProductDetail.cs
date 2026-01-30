@@ -71,7 +71,7 @@ namespace Online_Ordering_System
 
                         imageList1.ImageSize = new Size(190, 246);
 
-
+                        
                         LblBookName.Text = ProductList.InfoList[0].productName;
                         LblCategory.Text = ProductList.InfoList[0].productCategotyid.ToString();
                         LblPrice.Text = ProductList.InfoList[0].productPrice.ToString("C");
@@ -80,6 +80,11 @@ namespace Online_Ordering_System
                         LblPublisher.Text = ProductList.InfoList[0].productPublisher;
                         txtdescription.Text = ProductList.InfoList[0].productDescription;
                         pictureBox1.Image = imageList1.Images[0];
+
+                        if(UserProfile.Role == 1)
+                        {
+                            btnedit.Visible = true;
+                        }
 
                         //foreach (ProductInfo item in ProductList.InfoList)
                         //{
@@ -130,6 +135,15 @@ namespace Online_Ordering_System
             this.Close();
 
             Console.WriteLine(CartList.InfoList.Count);
+
+
+        }
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            ProductDetail_insert editform = new ProductDetail_insert();
+            editform.ShowDialog();
+            this.Close();
 
 
         }

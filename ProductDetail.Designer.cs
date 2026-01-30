@@ -53,6 +53,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnedit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -143,6 +144,7 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.btnedit);
             this.materialCard1.Controls.Add(this.label8);
             this.materialCard1.Controls.Add(this.LblPrice);
             this.materialCard1.Controls.Add(this.label4);
@@ -331,6 +333,21 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "商品詳細資訊";
             // 
+            // btnedit
+            // 
+            this.btnedit.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnedit.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnedit.ForeColor = System.Drawing.Color.White;
+            this.btnedit.Location = new System.Drawing.Point(254, 380);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(97, 29);
+            this.btnedit.TabIndex = 14;
+            this.btnedit.Text = "編輯商品";
+            this.btnedit.UseVisualStyleBackColor = false;
+            this.btnedit.Visible = false;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
+            // 
             // ProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -381,5 +398,6 @@
         private MaterialSkin.Controls.MaterialCard materialCard3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnedit;
     }
 }
