@@ -13,7 +13,8 @@ using System.Windows.Forms;
 namespace Online_Ordering_System
 {
     public partial class OrderPanel : UserControl
-    {
+    {   
+
         public OrderPanel()
         {
             InitializeComponent();
@@ -56,7 +57,14 @@ namespace Online_Ordering_System
         {
             SqlConnection con = DatabaseHelper.GetConnection();
             con.Open();
-            string strsql = "select * from orders o where userid = @UserId order by o.orderid  desc";
+            string strsql = "select * from orders o ";
+            if (UserProfile.Role != 1)
+            {
+                strsql += " where userid = @UserId order by o.orderid desc";
+            }else
+            {
+                strsql += " order by o.orderid desc ";
+            }
             SqlCommand cmd = new SqlCommand(strsql, con);
             cmd.Parameters.AddWithValue("@UserId", UserProfile.UserId);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -79,6 +87,12 @@ namespace Online_Ordering_System
             SqlConnection con = DatabaseHelper.GetConnection();
             con.Open();
             string strsql = "select * from Orders o inner join OrderDetail od on o.orderid = od.orderid inner join product p on od.productid = p.productid where o.orderid = @OrderId and o.userid = @UserId ";
+
+            if (UserProfile.Role != 1)
+            {
+                strsql += " and o.userid = @UserId";
+            }
+
             SqlCommand cmd = new SqlCommand(strsql, con);
             cmd.Parameters.AddWithValue("@UserId", UserProfile.UserId);
             cmd.Parameters.AddWithValue("@OrderId", orderid);
@@ -145,9 +159,19 @@ namespace Online_Ordering_System
 
         private void OrderPanel_Load(object sender, EventArgs e)
         {
+            if(AdminToolCB.Items.Count < 5)
+            {
+                AdminToolCB.Items.Add("未處理");
+                AdminToolCB.Items.Add("處理中");
+                AdminToolCB.Items.Add("已出貨");
+                AdminToolCB.Items.Add("已到貨");
+                AdminToolCB.Items.Add("已完成");
+                AdminToolCB.SelectedIndex = 0;
+            }
+
             LoadAllMemberDataTodataGridView1();
             ApplyAntdStyle(dataGridView1);
-
+            isAdmin();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -157,7 +181,60 @@ namespace Online_Ordering_System
                 int selectid = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
 
                 ShowOrderDetail(selectid);
+                isAdmin(selectid);
             }
+        }
+        private void isAdmin()
+        {
+            if (UserProfile.Role == 1)
+            {
+                AdminTool.Visible = true;
+
+            }
+            else
+            {
+                AdminTool.Visible = false;
+            }
+        }
+
+        private void isAdmin(int selectid)
+        {
+            AdminTool.Visible = true;
+            if (UserProfile.Role != 1)
+            {
+                AdminTool.Visible = false;
+            }
+
+
+            SqlConnection con = DatabaseHelper.GetConnection();
+            con.Open();
+            string strsql = "select status from orders where orderid = @OrderId";
+            SqlCommand cmd = new SqlCommand(strsql, con);
+            cmd.Parameters.AddWithValue("@OrderId", selectid);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                string status = (string)reader["status"];
+                AdminToolCB.SelectedItem = status;
+            }
+            reader.Close();
+            con.Close();
+
+
+        }
+
+        private void AdminToolSave_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = DatabaseHelper.GetConnection();
+            con.Open();
+            string strsql = "update orders set status = @Status where orderid = @OrderId";
+            SqlCommand cmd = new SqlCommand(strsql, con);
+            cmd.Parameters.AddWithValue("@Status", AdminToolCB.SelectedItem.ToString());
+            cmd.Parameters.AddWithValue("@OrderId", (int)dataGridView1.CurrentRow.Cells[0].Value);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("訂單狀態已更新");
+            OrderPanel_Load(this, EventArgs.Empty);
         }
     }
 }
