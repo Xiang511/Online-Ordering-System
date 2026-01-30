@@ -39,6 +39,7 @@
             this.LblISBN = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.btnedit = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.LblPrice = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +54,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnedit = new System.Windows.Forms.Button();
+            this.CBStauts = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -164,6 +165,21 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(390, 669);
             this.materialCard1.TabIndex = 9;
+            // 
+            // btnedit
+            // 
+            this.btnedit.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnedit.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnedit.ForeColor = System.Drawing.Color.White;
+            this.btnedit.Location = new System.Drawing.Point(254, 380);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(97, 29);
+            this.btnedit.TabIndex = 14;
+            this.btnedit.Text = "編輯商品";
+            this.btnedit.UseVisualStyleBackColor = false;
+            this.btnedit.Visible = false;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // label8
             // 
@@ -306,6 +322,7 @@
             // materialCard3
             // 
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.CBStauts);
             this.materialCard3.Controls.Add(this.label5);
             this.materialCard3.Controls.Add(this.LblPublisher);
             this.materialCard3.Controls.Add(this.LblCategory);
@@ -333,20 +350,14 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "商品詳細資訊";
             // 
-            // btnedit
+            // CBStauts
             // 
-            this.btnedit.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnedit.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnedit.ForeColor = System.Drawing.Color.White;
-            this.btnedit.Location = new System.Drawing.Point(254, 380);
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(97, 29);
-            this.btnedit.TabIndex = 14;
-            this.btnedit.Text = "編輯商品";
-            this.btnedit.UseVisualStyleBackColor = false;
-            this.btnedit.Visible = false;
-            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
+            this.CBStauts.Enabled = false;
+            this.CBStauts.FormattingEnabled = true;
+            this.CBStauts.Location = new System.Drawing.Point(207, 14);
+            this.CBStauts.Name = "CBStauts";
+            this.CBStauts.Size = new System.Drawing.Size(121, 20);
+            this.CBStauts.TabIndex = 17;
             // 
             // ProductDetail
             // 
@@ -399,5 +410,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnedit;
+        private System.Windows.Forms.ComboBox CBStauts;
     }
 }

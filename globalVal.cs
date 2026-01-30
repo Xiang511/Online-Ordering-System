@@ -50,6 +50,8 @@ namespace Online_Ordering_System
         public String productISBN { get; set; }
 
         public String productPublisher { get; set; }
+
+        public string status { get; set; }
     }
 
     public class ProductList

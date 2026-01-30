@@ -21,7 +21,11 @@ namespace Online_Ordering_System
         }
 
         private void ProductDetail_insert_Load(object sender, EventArgs e)
-        {
+        {   
+            CBStauts.Items.Add("上架中");
+            CBStauts.Items.Add("已下架");
+
+
             if (globalVal.LoadId > 0)
             {
                 SqlConnection con = DatabaseHelper.GetConnection();
@@ -43,6 +47,7 @@ namespace Online_Ordering_System
                     txtPublisher.Text = (string)reader["publisher"];
                     pictureBox1.ImageLocation = Path.Combine(globalVal.strImageDir, (string)reader["image"]);
                     pictureBox1.Tag = (string)reader["image"];
+                    CBStauts.SelectedItem = (string)reader["status"];
 
                 }
                 reader.Close();
@@ -73,7 +78,7 @@ namespace Online_Ordering_System
                         cmd.Parameters.AddWithValue("@Description", txtdescription.Text);
                         cmd.Parameters.AddWithValue("@ISBN", txtISBN.Text.Trim());
                         cmd.Parameters.AddWithValue("@Publisher", txtPublisher.Text);
-                        cmd.Parameters.AddWithValue("@status", "上架中");
+                        cmd.Parameters.AddWithValue("@status", CBStauts.SelectedItem.ToString());
                         cmd.Parameters.AddWithValue("@LoadId", globalVal.LoadId);
 
                         if (pictureBox1.Tag != null)

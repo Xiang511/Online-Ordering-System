@@ -21,6 +21,9 @@ namespace Online_Ordering_System
 
         private void ProductDetail_Load(object sender, EventArgs e)
         {
+            CBStauts.Items.Add("上架中");
+            CBStauts.Items.Add("已下架");
+
             if (!globalVal.islogin)
             {
                 MessageBox.Show("請先登入會員");
@@ -57,6 +60,7 @@ namespace Online_Ordering_System
                             info.productCategotyid = ((int)reader["categoryid"]);
                             info.productISBN = ((string)reader["ISBN"]);
                             info.productPublisher = ((string)reader["publisher"]);
+                            info.status = ((string)reader["status"]);
                             ProductList.InfoList.Add(info);
 
                             string imageName = (string)reader["image"];
@@ -80,8 +84,9 @@ namespace Online_Ordering_System
                         LblPublisher.Text = ProductList.InfoList[0].productPublisher;
                         txtdescription.Text = ProductList.InfoList[0].productDescription;
                         pictureBox1.Image = imageList1.Images[0];
+                        CBStauts.SelectedItem = ProductList.InfoList[0].status;
 
-                        if(UserProfile.Role == 1)
+                        if (UserProfile.Role == 1)
                         {
                             btnedit.Visible = true;
                         }

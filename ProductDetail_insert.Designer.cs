@@ -40,6 +40,7 @@
             this.txtdescription = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.Btnimage = new System.Windows.Forms.Button();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtBookName = new System.Windows.Forms.TextBox();
@@ -49,7 +50,7 @@
             this.LblBookName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.Btnimage = new System.Windows.Forms.Button();
+            this.CBStauts = new System.Windows.Forms.ComboBox();
             this.materialCard3.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard1.SuspendLayout();
@@ -59,6 +60,7 @@
             // materialCard3
             // 
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.CBStauts);
             this.materialCard3.Controls.Add(this.txtPublisher);
             this.materialCard3.Controls.Add(this.txtISBN);
             this.materialCard3.Controls.Add(this.txtcategory);
@@ -198,6 +200,20 @@
             this.materialCard1.Size = new System.Drawing.Size(390, 669);
             this.materialCard1.TabIndex = 13;
             // 
+            // Btnimage
+            // 
+            this.Btnimage.BackColor = System.Drawing.Color.DarkCyan;
+            this.Btnimage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnimage.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Btnimage.ForeColor = System.Drawing.Color.White;
+            this.Btnimage.Location = new System.Drawing.Point(81, 312);
+            this.Btnimage.Name = "Btnimage";
+            this.Btnimage.Size = new System.Drawing.Size(207, 26);
+            this.Btnimage.TabIndex = 17;
+            this.Btnimage.Text = "上傳圖片";
+            this.Btnimage.UseVisualStyleBackColor = false;
+            this.Btnimage.Click += new System.EventHandler(this.Btnimage_Click);
+            // 
             // txtStock
             // 
             this.txtStock.Location = new System.Drawing.Point(107, 490);
@@ -284,19 +300,13 @@
             this.label10.TabIndex = 11;
             this.label10.Text = "剩餘數量:";
             // 
-            // Btnimage
+            // CBStauts
             // 
-            this.Btnimage.BackColor = System.Drawing.Color.DarkCyan;
-            this.Btnimage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btnimage.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Btnimage.ForeColor = System.Drawing.Color.White;
-            this.Btnimage.Location = new System.Drawing.Point(81, 312);
-            this.Btnimage.Name = "Btnimage";
-            this.Btnimage.Size = new System.Drawing.Size(207, 26);
-            this.Btnimage.TabIndex = 17;
-            this.Btnimage.Text = "上傳圖片";
-            this.Btnimage.UseVisualStyleBackColor = false;
-            this.Btnimage.Click += new System.EventHandler(this.Btnimage_Click);
+            this.CBStauts.FormattingEnabled = true;
+            this.CBStauts.Location = new System.Drawing.Point(213, 14);
+            this.CBStauts.Name = "CBStauts";
+            this.CBStauts.Size = new System.Drawing.Size(121, 20);
+            this.CBStauts.TabIndex = 16;
             // 
             // ProductDetail_insert
             // 
@@ -345,5 +355,6 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtBookName;
         private System.Windows.Forms.Button Btnimage;
+        private System.Windows.Forms.ComboBox CBStauts;
     }
 }
