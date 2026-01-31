@@ -38,13 +38,14 @@
             this.btnCategroy1 = new System.Windows.Forms.Button();
             this.btnCategroy2 = new System.Windows.Forms.Button();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.btnInsert = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.materialCard1.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -171,6 +172,7 @@
             // materialCard2
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.button1);
             this.materialCard2.Controls.Add(this.btnInsert);
             this.materialCard2.Controls.Add(this.button2);
             this.materialCard2.Controls.Add(this.btnCategroy1);
@@ -184,6 +186,21 @@
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard2.Size = new System.Drawing.Size(104, 415);
             this.materialCard2.TabIndex = 11;
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnInsert.ForeColor = System.Drawing.Color.White;
+            this.btnInsert.Location = new System.Drawing.Point(17, 357);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(70, 41);
+            this.btnInsert.TabIndex = 13;
+            this.btnInsert.Text = "新增";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Visible = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // button2
             // 
@@ -251,20 +268,20 @@
             this.radioButton1.Text = "書名";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // btnInsert
+            // button1
             // 
-            this.btnInsert.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnInsert.ForeColor = System.Drawing.Color.White;
-            this.btnInsert.Location = new System.Drawing.Point(17, 357);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(70, 41);
-            this.btnInsert.TabIndex = 13;
-            this.btnInsert.Text = "新增";
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Visible = false;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            this.button1.BackColor = System.Drawing.Color.Turquoise;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(17, 310);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 41);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "下架";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MarketPanel
             // 
@@ -306,5 +323,6 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button button1;
     }
 }
