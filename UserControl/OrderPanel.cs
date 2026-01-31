@@ -163,8 +163,8 @@ namespace Online_Ordering_System
             listView3.View = View.Details;
             listView3.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             listView3.Columns.Add("會員名稱", 120);
-            listView3.Columns.Add("電子郵件", 200);
-            listView3.Columns.Add("電話", 120);
+            listView3.Columns.Add("電子郵件", 150);
+            listView3.Columns.Add("電話", 100);
 
 
             SqlConnection con = DatabaseHelper.GetConnection();

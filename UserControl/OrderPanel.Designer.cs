@@ -156,19 +156,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 18);
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(16, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.Size = new System.Drawing.Size(67, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "管理者工具";
             // 
             // AdminToolCB
             // 
-            this.AdminToolCB.Font = new System.Drawing.Font("新細明體", 14F);
+            this.AdminToolCB.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.AdminToolCB.FormattingEnabled = true;
-            this.AdminToolCB.Location = new System.Drawing.Point(184, 10);
+            this.AdminToolCB.Location = new System.Drawing.Point(184, 8);
             this.AdminToolCB.Name = "AdminToolCB";
-            this.AdminToolCB.Size = new System.Drawing.Size(142, 27);
+            this.AdminToolCB.Size = new System.Drawing.Size(142, 32);
             this.AdminToolCB.TabIndex = 9;
             // 
             // materialCard1

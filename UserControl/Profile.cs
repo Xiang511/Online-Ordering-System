@@ -286,12 +286,19 @@ namespace Online_Ordering_System
             object result = cmd.ExecuteScalar();
             con.Close();
 
-            if (result != DBNull.Value)
+            if(UserProfile.Role != 1)
             {
-                decimal totalAmount = Convert.ToDecimal(result);
-                LblTotalmount.Text = totalAmount.ToString("C");
-                Console.WriteLine($"Total Amount Spent: {totalAmount:C}");
+                if (result != DBNull.Value)
+                {   
+                    label15.Visible = true;
+                    LblTotalmount.Visible = true;
+                    decimal totalAmount = Convert.ToDecimal(result);
+                    LblTotalmount.Text = totalAmount.ToString("C");
+                    Console.WriteLine($"Total Amount Spent: {totalAmount:C}");
+                }
             }
+
+            
         }
     }
 

@@ -32,8 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.txtPic = new System.Windows.Forms.TextBox();
             this.btnChangePhoto = new System.Windows.Forms.Button();
+            this.avatar1 = new AntdUI.Avatar();
+            this.txtPic = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.txtConfirmpassword = new MaterialSkin.Controls.MaterialTextBox();
@@ -59,7 +60,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.avatar1 = new AntdUI.Avatar();
             this.materialCard1.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.SuspendLayout();
@@ -117,14 +117,6 @@
             this.materialCard1.Size = new System.Drawing.Size(537, 467);
             this.materialCard1.TabIndex = 2;
             // 
-            // txtPic
-            // 
-            this.txtPic.Location = new System.Drawing.Point(166, 115);
-            this.txtPic.Name = "txtPic";
-            this.txtPic.Size = new System.Drawing.Size(168, 22);
-            this.txtPic.TabIndex = 30;
-            this.txtPic.Visible = false;
-            // 
             // btnChangePhoto
             // 
             this.btnChangePhoto.Location = new System.Drawing.Point(340, 114);
@@ -135,6 +127,25 @@
             this.btnChangePhoto.UseVisualStyleBackColor = true;
             this.btnChangePhoto.Visible = false;
             this.btnChangePhoto.Click += new System.EventHandler(this.btnChangePhoto_Click);
+            // 
+            // avatar1
+            // 
+            this.avatar1.Image = ((System.Drawing.Image)(resources.GetObject("avatar1.Image")));
+            this.avatar1.Location = new System.Drawing.Point(17, 18);
+            this.avatar1.Name = "avatar1";
+            this.avatar1.Radius = -1;
+            this.avatar1.Round = true;
+            this.avatar1.Size = new System.Drawing.Size(119, 119);
+            this.avatar1.TabIndex = 31;
+            this.avatar1.Text = "";
+            // 
+            // txtPic
+            // 
+            this.txtPic.Location = new System.Drawing.Point(166, 115);
+            this.txtPic.Name = "txtPic";
+            this.txtPic.Size = new System.Drawing.Size(168, 22);
+            this.txtPic.TabIndex = 30;
+            this.txtPic.Visible = false;
             // 
             // button3
             // 
@@ -373,6 +384,7 @@
             this.LblTotalmount.Size = new System.Drawing.Size(44, 17);
             this.LblTotalmount.TabIndex = 22;
             this.LblTotalmount.Text = "NT$ 0";
+            this.LblTotalmount.Visible = false;
             // 
             // LblCreatdate
             // 
@@ -403,6 +415,7 @@
             this.label15.Size = new System.Drawing.Size(63, 17);
             this.label15.TabIndex = 19;
             this.label15.Text = "累計消費:";
+            this.label15.Visible = false;
             // 
             // label14
             // 
@@ -453,17 +466,6 @@
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard2.Size = new System.Drawing.Size(253, 467);
             this.materialCard2.TabIndex = 3;
-            // 
-            // avatar1
-            // 
-            this.avatar1.Image = ((System.Drawing.Image)(resources.GetObject("avatar1.Image")));
-            this.avatar1.Location = new System.Drawing.Point(17, 18);
-            this.avatar1.Name = "avatar1";
-            this.avatar1.Radius = -1;
-            this.avatar1.Round = true;
-            this.avatar1.Size = new System.Drawing.Size(119, 119);
-            this.avatar1.TabIndex = 31;
-            this.avatar1.Text = "";
             // 
             // Profile
             // 
